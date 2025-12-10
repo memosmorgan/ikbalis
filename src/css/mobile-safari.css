@@ -546,7 +546,9 @@ a[href],
   }
   
   .rm-animal-solo--special .rm-animal-solo__image {
-    width: 100px;
+    width: 150px;
+    max-width: 55%;
+    border-radius: 16px;
   }
   
   .rm-animal-solo__name {
@@ -604,6 +606,13 @@ a[href],
   
   .rm-animal-solo--primary .rm-animal-solo__image {
     width: 85px;
+  }
+  
+  /* Köpüş still needs decent size on short screens */
+  .rm-animal-solo--special .rm-animal-solo__image {
+    width: 120px;
+    max-width: 50%;
+    border-radius: 12px;
   }
   
   .rm-animal-solo__bubble {
