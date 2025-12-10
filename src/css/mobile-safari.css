@@ -458,29 +458,38 @@ a[href],
     -webkit-box-decoration-break: clone;
   }
   
-  /* Mobile tooltip - BELOW the word to prevent off-screen */
+  /* Mobile tooltip - compact card style */
   .rm-highlight-eyes.show-hint::before {
-    top: calc(100% + 10px) !important;
-    bottom: auto !important;
+    content: "👆 Önce gözlerine dokun" !important;
+    position: fixed !important;
+    top: auto !important;
+    bottom: 120px !important;
     left: 50% !important;
     right: auto !important;
     transform: translateX(-50%) !important;
-    white-space: normal;
-    max-width: 200px;
+    white-space: nowrap !important;
+    max-width: 280px;
     text-align: center;
-    font-size: 0.85rem;
-    padding: 10px 14px;
-    border-radius: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: 50px;
+    background: rgba(255, 77, 109, 0.95) !important;
+    color: #fff !important;
+    box-shadow: 0 8px 32px rgba(255, 77, 109, 0.5), 0 0 0 2px rgba(255,255,255,0.2);
+    z-index: 9999 !important;
+    animation: rm-tooltip-bounce 0.5s ease-out !important;
   }
   
-  /* Arrow pointing UP for tooltip */
+  /* Hide the arrow on mobile - using fixed position */
   .rm-highlight-eyes.show-hint::after {
-    top: 100% !important;
-    bottom: auto !important;
-    left: 50% !important;
-    transform: translateX(-50%) translateY(2px) !important;
-    border-bottom-color: rgba(255, 77, 109, 0.95) !important;
-    border-top-color: transparent !important;
+    display: none !important;
+  }
+  
+  @keyframes rm-tooltip-bounce {
+    0% { opacity: 0; transform: translateX(-50%) translateY(20px) scale(0.9); }
+    50% { transform: translateX(-50%) translateY(-5px) scale(1.02); }
+    100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
   }
   
   /* Hold button - comfortable size */
