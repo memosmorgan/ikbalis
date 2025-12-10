@@ -438,22 +438,24 @@ a[href],
     margin-bottom: var(--rm-space-3);
   }
   
-  /* "Gözlerini" tap target - LARGER and more obvious */
+  /* "Gözlerini" tap target - proper spacing on mobile */
   .rm-highlight-eyes {
-    display: inline-block;
-    padding: 6px 10px;
-    margin: -6px -10px;
-    min-height: 44px;
-    min-width: 44px;
-    line-height: 1.2;
-    border-radius: 8px;
+    display: inline;
+    padding: 2px 4px;
+    margin: 0 2px;
+    line-height: inherit;
+    border-radius: 4px;
     text-decoration: underline;
     text-decoration-style: wavy;
     text-decoration-color: currentColor;
-    text-underline-offset: 4px;
+    text-underline-offset: 3px;
     text-decoration-thickness: 2px;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(255, 179, 198, 0.3);
+    /* Ensure proper word spacing */
+    white-space: nowrap;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
   
   /* Mobile tooltip - BELOW the word to prevent off-screen */
