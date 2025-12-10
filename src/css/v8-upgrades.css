@@ -1,0 +1,163 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V9 FINAL POLISH - STYLES
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* V9: Pulse Glow for Infinity Photo */
+.rm-pulse-glow {
+  animation: rm-pulse-glow-anim 4s ease-in-out infinite !important; /* Override other anims if needed */
+}
+
+@keyframes rm-pulse-glow-anim {
+  0%, 100% { box-shadow: var(--rm-shadow-polaroid); }
+  50% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.6), var(--rm-shadow-polaroid); }
+}
+
+/* V9: Bloom Effect */
+.rm-bloom-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999999;
+  transition: opacity 0.5s ease-out;
+}
+
+.rm-bloom-effect.is-active {
+  opacity: 0.9;
+}
+
+/* V9: Curtain Heart Interactive State */
+.rm-curtain__heart {
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
+  user-select: none;
+}
+
+.rm-curtain__heart:active {
+  transform: scale(0.9);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V8: CURTAIN RAISER (PRE-LOADER)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.rm-curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  background: #000;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.rm-curtain.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rm-curtain__content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--rm-space-4);
+  padding: var(--rm-space-6);
+}
+
+.rm-curtain__heart {
+  font-size: 3rem;
+  animation: rm-heart-beat 1.5s ease-in-out infinite;
+  margin-bottom: var(--rm-space-2);
+}
+
+.rm-curtain__text {
+  font-family: var(--rm-font-script);
+  font-size: 1.5rem;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.rm-curtain__hint {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: var(--rm-space-6);
+}
+
+.rm-curtain__btn {
+  padding: 12px 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: #fff;
+  font-family: var(--rm-font-body);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: rm-pulse-white 2s infinite;
+}
+
+.rm-curtain__btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+@keyframes rm-pulse-white {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V8: BREATHING BACKGROUNDS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Update .rm-shell to use breathing animation */
+.rm-shell {
+  background-size: 150% 150%;
+  animation: rm-bg-breathe 30s ease-in-out infinite alternate;
+}
+
+@keyframes rm-bg-breathe {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V8: POETIC TEXT REVEAL
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.rm-poetic-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  will-change: opacity, transform;
+  white-space: pre-wrap; /* Preserve spaces */
+}
+
+.is-poetic-visible .rm-poetic-word {
+  animation: rm-poetic-fade-in 0.8s ease-out forwards;
+  animation-delay: calc(var(--word-index) * 0.05s + var(--reveal-delay, 0s));
+}
+
+@keyframes rm-poetic-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}

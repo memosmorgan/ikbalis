@@ -1,0 +1,509 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * ROMANTIC MOTION DESIGN SYSTEM - TOKENS (V7 CINEMATIC POLISH)
+ * ═══════════════════════════════════════════════════════════════════════════
+ * A handcrafted design token system for İkbal's birthday website.
+ * Version 7.0 - Cinematic Polish Pass: Deeper 3D, Mini-Show Stage, Paper Reveal
+ * Softer pastel palette, dreamy and romantic
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+:root {
+  /* ─────────────────────────────────────────────────────────────────────────
+   * V6 COLOR PALETTE - SOFTER ROMANTIC PASTELS
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  /* Background Colors - Softer, dreamier */
+  --rm-color-bg-main: #1e1428;
+  --rm-color-bg-deep: #12091a;
+  --rm-color-bg-soft: rgba(255, 255, 255, 0.05);
+  --rm-color-bg-glass: rgba(255, 255, 255, 0.08);
+  --rm-color-bg-glass-strong: rgba(255, 255, 255, 0.14);
+  --rm-color-bg-hero-top: #1e1428;
+  --rm-color-bg-hero-bot: #2c1838;
+  --rm-color-bg-closing-top: #3a1840;
+  --rm-color-bg-closing-bot: #5d274b;
+  
+  /* V6 Pastel Accent Colors - Warmer, softer, more romantic */
+  --rm-color-accent-pink: #ffacc8;
+  --rm-color-accent-pink-soft: #ffd0e0;
+  --rm-color-accent-pink-deep: #f07aa0;
+  --rm-color-accent-lilac: #d4b4ff;
+  --rm-color-accent-lilac-soft: #e6d5ff;
+  --rm-color-accent-lilac-deep: #b08ae8;
+  --rm-color-accent-gold: #ffe4b5;
+  --rm-color-accent-gold-soft: #fff0d6;
+  --rm-color-accent-gold-deep: #f0c878;
+  --rm-color-accent-rose: #ffa0c0;
+  --rm-color-accent-blush: #ffd8e8;
+  --rm-color-accent-peach: #ffc8b0;
+  --rm-color-accent-lavender: #f0e4ff;
+  
+  /* Text Colors */
+  --rm-color-text-main: #fefaff;
+  --rm-color-text-soft: #f0e8f8;
+  --rm-color-text-muted: #d8c8e8;
+  --rm-color-text-subtle: #b8a0d0;
+  --rm-color-text-caption: #a090b8;
+  
+  /* Border & Shadow Colors */
+  --rm-color-border-soft: rgba(255, 255, 255, 0.12);
+  --rm-color-border-glass: rgba(255, 255, 255, 0.08);
+  --rm-color-border-accent: rgba(255, 172, 200, 0.35);
+  --rm-color-border-glow: rgba(255, 172, 200, 0.5);
+  --rm-color-shadow-soft: rgba(0, 0, 0, 0.45);
+  --rm-color-shadow-deep: rgba(0, 0, 0, 0.65);
+  --rm-color-overlay: rgba(18, 9, 26, 0.92);
+  --rm-color-overlay-light: rgba(18, 9, 26, 0.7);
+  
+  /* Polaroid Colors */
+  --rm-color-polaroid-bg: #fffcf8;
+  --rm-color-polaroid-shadow: rgba(0, 0, 0, 0.28);
+  
+  /* Letter Card Colors */
+  --rm-color-letter-bg: linear-gradient(145deg, rgba(255, 228, 210, 0.1), rgba(255, 192, 208, 0.08));
+  --rm-color-letter-border: rgba(255, 210, 190, 0.25);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+   * V6 SCENE GRADIENTS - SOFTER PASTEL MOODS
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  /* Hero Scene - Warm welcome with pink undertones */
+  --rm-gradient-hero: linear-gradient(
+    150deg, 
+    #1e1428 0%, 
+    #281838 35%, 
+    #321a42 60%, 
+    #2a1838 85%,
+    #241530 100%
+  );
+  
+  /* Love Scene - Blush tones, intimate */
+  --rm-gradient-love: linear-gradient(
+    145deg, 
+    #261832 0%, 
+    #381e44 40%, 
+    #3a2248 70%, 
+    #2c1838 100%
+  );
+  
+  /* Gallery Scene - Cooler lilac for photo focus */
+  --rm-gradient-gallery: linear-gradient(
+    145deg, 
+    #221635 0%, 
+    #2e1c48 40%, 
+    #322050 70%, 
+    #261838 100%
+  );
+  
+  /* Deep Feelings Scene - Deeper purple, intimate */
+  --rm-gradient-deep: linear-gradient(
+    145deg, 
+    #241838 0%, 
+    #361c50 45%, 
+    #3a2055 70%, 
+    #2a1840 100%
+  );
+  
+  /* Animals Scene - Warmer with subtle gold hints */
+  --rm-gradient-animals: linear-gradient(
+    145deg, 
+    #221635 0%, 
+    #2e1c40 35%, 
+    #322045 60%, 
+    #2a1a3a 85%,
+    #241832 100%
+  );
+  
+  /* Closing Scene - Building warm emotional glow */
+  --rm-gradient-closing: linear-gradient(
+    145deg, 
+    #2c1838 0%, 
+    #482445 40%, 
+    #582a50 70%, 
+    #452040 100%
+  );
+  
+  /* Letter Scene - Soft final calm */
+  --rm-gradient-letter: linear-gradient(
+    145deg, 
+    #2c1835 0%, 
+    #3c2245 35%, 
+    #4a2850 60%, 
+    #3c2245 85%,
+    #301a3a 100%
+  );
+  
+  /* Supporting Gradients */
+  --rm-gradient-section: linear-gradient(180deg, #1e1428 0%, #261832 100%);
+  --rm-gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.04) 100%);
+  --rm-gradient-pink-lilac: linear-gradient(135deg, var(--rm-color-accent-pink) 0%, var(--rm-color-accent-lilac) 100%);
+  --rm-gradient-text-romantic: linear-gradient(90deg, #ffacc8 0%, #ffd0e0 25%, #e6d5ff 50%, #d4b4ff 75%, #ffacc8 100%);
+  --rm-gradient-card-deep: linear-gradient(145deg, rgba(255,172,200,0.14) 0%, rgba(212,180,255,0.14) 100%);
+  --rm-gradient-shimmer: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
+  
+  /* V6 Scene Transition Glow */
+  --rm-gradient-cinematic-glow: radial-gradient(ellipse at center, rgba(255, 172, 200, 0.12) 0%, transparent 55%);
+  
+  /* V6 Softer Vignettes */
+  --rm-gradient-vignette-soft: radial-gradient(ellipse at center, transparent 45%, rgba(18, 9, 26, 0.35) 100%);
+  --rm-gradient-vignette-focused: radial-gradient(ellipse at center, transparent 25%, rgba(18, 9, 26, 0.4) 75%, rgba(18, 9, 26, 0.55) 100%);
+  --rm-gradient-vignette-warm: radial-gradient(ellipse at center, rgba(255, 172, 200, 0.06) 0%, transparent 45%, rgba(18, 9, 26, 0.4) 100%);
+  
+  /* V7: Stage Spotlight Gradient (Dynamic variables added) */
+  --rm-gradient-stage-spotlight: radial-gradient(
+    ellipse 60% 50% at var(--spotlight-x, 50%) var(--spotlight-y, 45%),
+    rgba(255, 228, 181, 0.12) 0%,
+    rgba(212, 180, 255, 0.08) 35%,
+    transparent 70%
+  );
+  
+  /* ─────────────────────────────────────────────────────────────────────────
+   * TYPOGRAPHY
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  /* Font Families */
+  --rm-font-body: "Quicksand", "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --rm-font-heading: "Quicksand", "Poppins", system-ui, sans-serif;
+  --rm-font-script: "Dancing Script", "Caveat", cursive;
+  --rm-font-letter: "Caveat", "Dancing Script", cursive;
+  --rm-font-accent: "Playfair Display", Georgia, serif;
+  
+  /* Font Sizes - Mobile First */
+  --rm-text-size-xs: 0.75rem;
+  --rm-text-size-sm: 0.875rem;
+  --rm-text-size-md: 1rem;
+  --rm-text-size-lg: 1.125rem;
+  --rm-text-size-xl: 1.35rem;
+  --rm-text-size-2xl: 1.65rem;
+  --rm-text-size-3xl: 2rem;
+  --rm-text-size-4xl: 2.5rem;
+  --rm-text-size-hero: 2.2rem;
+  --rm-text-size-script: 2rem;
+  --rm-text-size-script-lg: 2.8rem;
+  --rm-text-size-letter: 1.25rem;
+  
+  /* Font Weights */
+  --rm-weight-light: 300;
+  --rm-weight-normal: 400;
+  --rm-weight-medium: 500;
+  --rm-weight-semibold: 600;
+  --rm-weight-bold: 700;
+  
+  /* Line Heights */
+  --rm-line-tight: 1.2;
+  --rm-line-heading: 1.35;
+  --rm-line-body: 1.7;
+  --rm-line-relaxed: 1.85;
+  --rm-line-letter: 2;
+  
+  /* Letter Spacing */
+  --rm-tracking-tight: -0.02em;
+  --rm-tracking-normal: 0;
+  --rm-tracking-soft: 0.02em;
+  --rm-tracking-wide: 0.05em;
+  --rm-tracking-script: 0.03em;
+  
+  /* ─────────────────────────────────────────────────────────────────────────
+   * SPACING SCALE
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  --rm-space-1: 4px;
+  --rm-space-2: 8px;
+  --rm-space-3: 12px;
+  --rm-space-4: 16px;
+  --rm-space-5: 20px;
+  --rm-space-6: 24px;
+  --rm-space-7: 32px;
+  --rm-space-8: 40px;
+  --rm-space-9: 48px;
+  --rm-space-10: 56px;
+  --rm-space-11: 64px;
+  --rm-space-12: 80px;
+  --rm-space-13: 96px;
+  --rm-space-14: 120px;
+  
+  /* ─────────────────────────────────────────────────────────────────────────
+   * BORDER RADIUS
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  --rm-radius-xs: 4px;
+  --rm-radius-sm: 8px;
+  --rm-radius-md: 12px;
+  --rm-radius-lg: 18px;
+  --rm-radius-xl: 24px;
+  --rm-radius-2xl: 32px;
+  --rm-radius-3xl: 40px;
+  --rm-radius-full: 999px;
+  
+  /* ─────────────────────────────────────────────────────────────────────────
+   * SHADOWS & GLOWS (V7 ENHANCED)
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  --rm-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.22);
+  --rm-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.30);
+  --rm-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.40);
+  --rm-shadow-xl: 0 24px 56px rgba(0, 0, 0, 0.50);
+  --rm-shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
+  --rm-shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --rm-shadow-polaroid: 0 8px 28px rgba(0, 0, 0, 0.32), 0 2px 8px rgba(0, 0, 0, 0.12);
+  
+  /* V6 Scene & Button Shadows */
+  --rm-shadow-scene: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --rm-shadow-button: 0 6px 20px rgba(255, 172, 200, 0.28);
+  --rm-shadow-button-hover: 0 8px 30px rgba(255, 172, 200, 0.42);
+  --rm-shadow-polaroid-fly: 0 30px 60px rgba(0, 0, 0, 0.45), 0 15px 30px rgba(0, 0, 0, 0.25);
+  --rm-shadow-polaroid-hover: 0 20px 50px rgba(0, 0, 0, 0.35), 0 10px 20px rgba(0, 0, 0, 0.22), 0 0 30px rgba(255, 172, 200, 0.22);
+  --rm-shadow-letter: 0 30px 80px rgba(0, 0, 0, 0.35), 0 10px 30px rgba(0, 0, 0, 0.18);
+  
+  /* V7: Letter Paper Shadow - intensifies during entrance */
+  --rm-shadow-letter-entrance: 0 40px 100px rgba(0, 0, 0, 0.45), 0 15px 40px rgba(0, 0, 0, 0.25);
+  
+  /* V7: Stage Frame Shadow */
+  --rm-shadow-stage-frame: 
+    inset 0 2px 12px rgba(0, 0, 0, 0.35),
+    0 8px 32px rgba(0, 0, 0, 0.3);
+  
+  /* Glow Effects - Softer */
+  --rm-glow-pink-sm: 0 0 20px rgba(255, 172, 200, 0.32);
+  --rm-glow-pink-md: 0 0 40px rgba(255, 172, 200, 0.45);
+  --rm-glow-pink-lg: 0 0 60px rgba(255, 172, 200, 0.52);
+  --rm-glow-lilac-sm: 0 0 20px rgba(212, 180, 255, 0.32);
+  --rm-glow-lilac-md: 0 0 40px rgba(212, 180, 255, 0.45);
+  --rm-glow-lilac-lg: 0 0 60px rgba(212, 180, 255, 0.52);
+  --rm-glow-gold-sm: 0 0 20px rgba(255, 228, 181, 0.35);
+  --rm-glow-gold-md: 0 0 40px rgba(255, 228, 181, 0.48);
+  
+  /* V6 Button Glows */
+  --rm-glow-button: 0 0 30px rgba(255, 172, 200, 0.42), 0 0 60px rgba(212, 180, 255, 0.22);
+  --rm-glow-button-pulse: 0 0 40px rgba(255, 172, 200, 0.52), 0 0 80px rgba(212, 180, 255, 0.32);
+  --rm-glow-romantic: 0 0 80px rgba(255, 172, 200, 0.32), 0 0 40px rgba(212, 180, 255, 0.22);
+  --rm-glow-text: 0 0 30px rgba(255, 172, 200, 0.52), 0 0 60px rgba(255, 172, 200, 0.32);
+  
+  /* V7: Hamster Star Glow */
+  --rm-glow-hamster-star: 0 0 35px rgba(255, 228, 181, 0.6), 0 0 70px rgba(255, 228, 181, 0.35);
+  
+  /* ─────────────────────────────────────────────────────────────────────────
+   * MOTION & ANIMATION TOKENS (V7 CINEMATIC POLISH)
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  /* Durations */
+  --rm-duration-instant: 100ms;
+  --rm-duration-fast: 200ms;
+  --rm-duration-normal: 350ms;
+  --rm-duration-med: 500ms;
+  --rm-duration-slow: 700ms;
+  --rm-duration-slower: 1000ms;
+  --rm-duration-hero: 1200ms;
+  --rm-duration-cinematic: 1800ms;
+  
+  /* V6 Scene Durations */
+  --rm-duration-scene-enter: 900ms;
+  --rm-duration-scene-leave: 650ms;
+  --rm-duration-reveal: 850ms;
+  --rm-duration-dramatic: 1600ms;
+  --rm-duration-float: 6500ms;
+  --rm-duration-ambient: 22000ms;
+  
+  /* V7: Enhanced durations for cinematic effects */
+  --rm-duration-fly-in: 1250ms;
+  --rm-duration-letter-entrance: 1200ms;
+  --rm-duration-hero-entrance: 1150ms;
+  --rm-duration-hamster-entrance: 1050ms;
+  
+  /* Easing Functions */
+  --rm-ease-linear: linear;
+  --rm-ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --rm-ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --rm-ease-spring: cubic-bezier(0.2, 0.7, 0.25, 1.15);
+  --rm-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --rm-ease-hero: cubic-bezier(0.13, 0.35, 0.26, 0.99);
+  --rm-ease-romantic: cubic-bezier(0.4, 0, 0.1, 1);
+  --rm-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --rm-ease-in-out-back: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  
+  /* V6 Scene Easing */
+  --rm-ease-scene-enter: cubic-bezier(0.22, 1, 0.36, 1);
+  --rm-ease-scene-leave: cubic-bezier(0.4, 0, 0.6, 1);
+  --rm-ease-fly-in: cubic-bezier(0.14, 1.1, 0.28, 1);
+  --rm-ease-overshoot: cubic-bezier(0.34, 1.8, 0.64, 1);
+  --rm-ease-dramatic: cubic-bezier(0.19, 1, 0.22, 1);
+  --rm-ease-liquid: cubic-bezier(0.4, 0, 0, 1);
+  
+  /* V7: Cinematic Easing */
+  --rm-ease-cinematic-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+  --rm-ease-paper-unfold: cubic-bezier(0.22, 0.9, 0.36, 1.05);
+  
+  /* ─────────────────────────────────────────────────────────────────────────
+   * Z-INDEX SCALE
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  --rm-z-behind: -1;
+  --rm-z-base: 0;
+  --rm-z-ambient: 1;
+  --rm-z-content: 10;
+  --rm-z-scene: 50;
+  --rm-z-sticky: 100;
+  --rm-z-fixed: 500;
+  --rm-z-cursor: 800; /* V7: New Custom Cursor */
+  --rm-z-overlay: 900;
+  --rm-z-modal: 1000;
+  --rm-z-toast: 1100;
+  --rm-z-top: 9999;
+  
+  /* ─────────────────────────────────────────────────────────────────────────
+   * BREAKPOINTS (for reference in JS)
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  --rm-bp-sm: 480px;
+  --rm-bp-md: 768px;
+  --rm-bp-lg: 1024px;
+  --rm-bp-xl: 1280px;
+  
+  /* ─────────────────────────────────────────────────────────────────────────
+   * BLUR VALUES
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  --rm-blur-sm: 8px;
+  --rm-blur-md: 16px;
+  --rm-blur-lg: 24px;
+  --rm-blur-xl: 40px;
+  --rm-blur-glass: 20px;
+  --rm-blur-scene: 60px;
+  
+  /* ─────────────────────────────────────────────────────────────────────────
+   * V7 3D & PERSPECTIVE (ENHANCED FOR CINEMATIC GALLERY & LETTER)
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  --rm-perspective-scene: 1200px;
+  --rm-perspective-card: 1000px;
+  --rm-perspective-subtle: 2000px;
+  --rm-perspective-gallery: 1700px;
+  --rm-perspective-letter: 1200px;
+  
+  --rm-rotate-tilt-sm: 2deg;
+  --rm-rotate-tilt-md: 4deg;
+  --rm-rotate-tilt-lg: 8deg;
+  
+  --rm-translate-z-near: 50px;
+  --rm-translate-z-mid: 80px;
+  --rm-translate-z-far: -60px;
+  
+  /* V7: Enhanced Polaroid 3D Fly-In Tokens - Much Deeper */
+  --rm-polaroid-fly-scale-start: 0.45;
+  --rm-polaroid-fly-translate-z-start: -580px;
+  --rm-polaroid-fly-translate-y-start: 180px;
+  --rm-polaroid-fly-blur-start: 16px;
+  --rm-polaroid-fly-rotate-x-start: 18deg;
+  --rm-polaroid-fly-duration: 1250ms;
+  
+  /* V7: Overshoot Values */
+  --rm-polaroid-fly-overshoot-scale: 1.055;
+  --rm-polaroid-fly-overshoot-z: 50px;
+  
+  /* ─────────────────────────────────────────────────────────────────────────
+   * COMPONENT-SPECIFIC TOKENS
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  /* Polaroid */
+  --rm-polaroid-width: 200px;
+  --rm-polaroid-padding: 10px;
+  --rm-polaroid-padding-bottom: 42px;
+  --rm-polaroid-rotation-left: -4deg;
+  --rm-polaroid-rotation-right: 4deg;
+  
+  /* V7 Polaroid Flying */
+  --rm-polaroid-fly-scale: 0.45;
+  --rm-polaroid-fly-rotate: 12deg;
+  --rm-polaroid-fly-translate-z: -580px;
+  --rm-polaroid-fly-translate-y: 180px;
+  
+  /* Cards */
+  --rm-card-max-width: 580px;
+  --rm-card-padding: var(--rm-space-7);
+  
+  /* Letter Card */
+  --rm-letter-max-width: 680px;
+  --rm-letter-padding: var(--rm-space-8);
+  
+  /* Bokeh */
+  --rm-bokeh-size-sm: 80px;
+  --rm-bokeh-size-md: 140px;
+  --rm-bokeh-size-lg: 200px;
+  --rm-bokeh-size-xl: 280px;
+  --rm-bokeh-opacity: 0.14;
+  
+  /* Music Button */
+  --rm-music-btn-size: 56px;
+  --rm-music-btn-offset: 24px;
+  
+  /* Container */
+  --rm-container-max: 1100px;
+  --rm-container-padding: var(--rm-space-5);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+   * V7 ANIMALS STAGE TOKENS
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  --rm-animal-emoji-size: 5.5rem;
+  --rm-animal-emoji-size-primary: 7.5rem;
+  --rm-animal-bubble-border-width: 2px;
+  
+  /* ─────────────────────────────────────────────────────────────────────────
+   * V6 SCENE TRANSITION TOKENS
+   * ───────────────────────────────────────────────────────────────────────── */
+  
+  --rm-scene-transition: background 1.4s var(--rm-ease-scene-enter);
+  
+  /* Continue Button */
+  --rm-btn-continue-height: 52px;
+  --rm-btn-continue-padding: 0 var(--rm-space-7);
+  
+  /* Current scene index (set by JS) */
+  --rm-current-scene: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * RESPONSIVE TOKEN OVERRIDES (V7 ENHANCED)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (min-width: 768px) {
+  :root {
+    --rm-text-size-hero: 2.8rem;
+    --rm-text-size-script: 2.5rem;
+    --rm-text-size-script-lg: 3.2rem;
+    --rm-text-size-3xl: 2.4rem;
+    --rm-text-size-4xl: 3rem;
+    --rm-text-size-letter: 1.35rem;
+    --rm-container-padding: var(--rm-space-8);
+    --rm-polaroid-width: 220px;
+    --rm-card-padding: var(--rm-space-9);
+    --rm-letter-padding: var(--rm-space-10);
+    
+    /* V7: Enhanced 3D on desktop - deeper fly-in */
+    --rm-perspective-scene: 1500px;
+    --rm-perspective-gallery: 1800px;
+    --rm-polaroid-fly-translate-z: -620px;
+    --rm-polaroid-fly-translate-y: 200px;
+    --rm-polaroid-fly-translate-z-start: -620px;
+    
+    /* V7: Larger emojis on tablet+ */
+    --rm-animal-emoji-size: 6rem;
+    --rm-animal-emoji-size-primary: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --rm-text-size-hero: 3.2rem;
+    --rm-text-size-script-lg: 3.8rem;
+    --rm-text-size-4xl: 3.5rem;
+    --rm-polaroid-width: 240px;
+    --rm-letter-max-width: 750px;
+    
+    /* V7: Even stronger 3D on large screens - maximum depth */
+    --rm-perspective-scene: 1800px;
+    --rm-perspective-gallery: 1900px;
+    --rm-polaroid-fly-translate-z-start: -680px;
+  }
+}

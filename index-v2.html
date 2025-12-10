@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tatlışımın doğum günü</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg-main: #07040c;
+  --bg-elevated: rgba(255,255,255,0.03);
+  --bg-glass: rgba(255,255,255,0.05);
+  --accent-pink: #ff7eb3;
+  --accent-pink-soft: #ffb3d0;
+  --accent-lilac: #b095ff;
+  --accent-lilac-soft: #d4c4ff;
+  --accent-gold: #ffd89c;
+  --accent-rose: #ff6b9d;
+  --text-main: #fdf7ff;
+  --text-muted: #c8bedf;
+  --text-soft: #9d93b8;
+  --border-soft: rgba(255,255,255,0.08);
+  --border-glow: rgba(255,126,179,0.3);
+  --shadow-soft: 0 20px 60px rgba(0,0,0,0.7);
+  --shadow-glow: 0 0 50px rgba(176,149,255,0.12);
+  --font-body: 'Quicksand', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-elegant: 'Cormorant Garamond', serif;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --ease-out-expo: cubic-bezier(0.16,1,0.3,1);
+  --ease-out-back: cubic-bezier(0.34,1.56,0.64,1);
+  --ease-elastic: cubic-bezier(0.68,-0.55,0.265,1.55);
+  --transition-base: 0.4s var(--ease-out-expo);
+  --transition-slow: 0.8s var(--ease-out-expo);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--bg-main);color:var(--text-main);line-height:1.7;overflow-x:hidden;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 10%,rgba(176,149,255,0.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 90%,rgba(255,126,179,0.05) 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,rgba(255,107,157,0.03) 0%,transparent 60%),linear-gradient(180deg,#07040c 0%,#0d071a 50%,#0a0614 100%);z-index:-3;animation:bgPulse 20s ease infinite alternate}
+@keyframes bgPulse{0%,100%{opacity:1}50%{opacity:0.85}}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{width:100%;max-width:960px;margin:0 auto;padding:0 var(--space-md)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Bokeh Particles Layer */
+.bokeh-layer{position:fixed;inset:0;pointer-events:none;z-index:-2;overflow:hidden}
+.bokeh{position:absolute;border-radius:50%;filter:blur(40px);opacity:0;will-change:transform,opacity;animation:bokehFloat 15s ease-in-out infinite}
+.bokeh:nth-child(1){width:200px;height:200px;background:radial-gradient(circle,rgba(255,126,179,0.15) 0%,transparent 70%);top:10%;left:5%;animation-delay:0s}
+.bokeh:nth-child(2){width:150px;height:150px;background:radial-gradient(circle,rgba(176,149,255,0.12) 0%,transparent 70%);top:60%;right:10%;animation-delay:-5s}
+.bokeh:nth-child(3){width:180px;height:180px;background:radial-gradient(circle,rgba(255,216,156,0.1) 0%,transparent 70%);bottom:20%;left:20%;animation-delay:-10s}
+.bokeh:nth-child(4){width:120px;height:120px;background:radial-gradient(circle,rgba(255,179,208,0.1) 0%,transparent 70%);top:30%;right:25%;animation-delay:-7s}
+.bokeh:nth-child(5){width:160px;height:160px;background:radial-gradient(circle,rgba(212,196,255,0.08) 0%,transparent 70%);bottom:40%;left:60%;animation-delay:-12s}
+@keyframes bokehFloat{0%,100%{opacity:0.3;transform:translate(0,0) scale(1)}25%{opacity:0.5;transform:translate(20px,-30px) scale(1.1)}50%{opacity:0.4;transform:translate(-15px,20px) scale(0.9)}75%{opacity:0.6;transform:translate(10px,10px) scale(1.05)}}
+
+/* Floating Shapes with Parallax */
+.floating-shapes{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.shape{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.35;will-change:transform;transition:transform 0.3s ease-out}
+.shape--1{width:450px;height:450px;background:radial-gradient(circle,rgba(176,149,255,0.25) 0%,transparent 70%);top:-150px;left:-150px;animation:floatShape1 30s ease-in-out infinite}
+.shape--2{width:350px;height:350px;background:radial-gradient(circle,rgba(255,126,179,0.2) 0%,transparent 70%);bottom:15%;right:-100px;animation:floatShape2 35s ease-in-out infinite}
+.shape--3{width:280px;height:280px;background:radial-gradient(circle,rgba(255,216,156,0.12) 0%,transparent 70%);top:45%;left:5%;animation:floatShape3 40s ease-in-out infinite}
+@keyframes floatShape1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,60px) scale(1.15)}66%{transform:translate(-30px,40px) scale(0.9)}}
+@keyframes floatShape2{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-50px,-40px) rotate(15deg)}}
+@keyframes floatShape3{0%,100%{transform:translate(0,0)}25%{transform:translate(30px,-30px)}75%{transform:translate(-20px,35px)}}
+
+/* Floating Hearts */
+.floating-heart{position:absolute;font-size:1.1rem;opacity:0;animation:floatHeart 25s ease-in-out infinite}
+.floating-heart:nth-child(4){top:12%;left:6%;animation-delay:-3s}
+.floating-heart:nth-child(5){top:50%;right:8%;animation-delay:-8s;font-size:1.3rem}
+.floating-heart:nth-child(6){bottom:30%;left:12%;animation-delay:-13s}
+.floating-heart:nth-child(7){top:70%;left:80%;animation-delay:-18s;font-size:0.9rem}
+@keyframes floatHeart{0%,100%{transform:translateY(0) rotate(-8deg);opacity:0.1}50%{transform:translateY(-25px) rotate(8deg);opacity:0.25}}
+
+/* Section Transition Overlay */
+.section-transition{position:fixed;inset:0;pointer-events:none;z-index:50;opacity:0;visibility:hidden;background:linear-gradient(135deg,rgba(176,149,255,0.15) 0%,rgba(255,126,179,0.15) 100%);transition:opacity 0.6s ease,visibility 0.6s ease}
+.section-transition.is-active{opacity:1;visibility:visible}
+.section-transition__label{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--font-elegant);font-size:1.2rem;color:var(--text-muted);font-style:italic;opacity:0;animation:labelFade 1s ease 0.2s forwards}
+@keyframes labelFade{0%{opacity:0;transform:translate(-50%,-50%) translateY(10px)}50%{opacity:1;transform:translate(-50%,-50%) translateY(0)}100%{opacity:0;transform:translate(-50%,-50%) translateY(-10px)}}
+
+/* Toast Notifications */
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);padding:var(--space-sm) var(--space-md);background:var(--bg-glass);backdrop-filter:blur(20px);border:1px solid var(--border-soft);border-radius:50px;font-size:0.9rem;color:var(--text-main);opacity:0;visibility:hidden;transition:all 0.4s var(--ease-out-expo);z-index:200;white-space:nowrap}
+.toast.is-visible{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+
+/* Speech Bubbles */
+.speech-bubble{position:absolute;top:-60px;left:50%;transform:translateX(-50%) translateY(10px);padding:8px 14px;background:var(--bg-main);border:1px solid var(--accent-pink);border-radius:12px;font-size:0.75rem;color:var(--text-main);opacity:0;visibility:hidden;transition:all 0.3s var(--ease-out-back);z-index:10;white-space:nowrap}
+.speech-bubble::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);border:8px solid transparent;border-top-color:var(--accent-pink);border-bottom:0}
+.animal-card:hover .speech-bubble,.animal-card:focus .speech-bubble{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+
+/* Typography */
+.section-label{font-family:var(--font-body);font-size:0.8rem;font-weight:600;color:var(--accent-lilac);text-transform:uppercase;letter-spacing:0.18em;margin-bottom:var(--space-sm);display:inline-block;position:relative}
+.section-label::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:linear-gradient(90deg,var(--accent-lilac),transparent);transition:width 0.6s var(--ease-out-expo)}
+.is-visible .section-label::after{width:100%}
+.script-text{font-family:var(--font-script);font-size:clamp(1.8rem,5.5vw,3.2rem);color:var(--text-main);line-height:1.4}
+.elegant-text{font-family:var(--font-elegant);font-size:clamp(1.1rem,3vw,1.35rem);font-weight:400;color:var(--text-muted);line-height:1.9;font-style:italic}
+
+/* Glass Card */
+.glass-card{background:var(--bg-glass);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);border:1px solid var(--border-soft);border-radius:28px;padding:var(--space-lg);box-shadow:var(--shadow-soft),var(--shadow-glow);position:relative;overflow:hidden}
+.glass-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent)}
+.glass-card::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);pointer-events:none}
+
+/* HERO */
+#hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:var(--space-xl) var(--space-md);position:relative;overflow:hidden}
+.hero-glow{position:absolute;width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(176,149,255,0.08) 0%,transparent 60%);pointer-events:none;opacity:0;animation:heroGlowIn 2s ease 0.5s forwards}
+@keyframes heroGlowIn{to{opacity:1}}
+.hero-content{text-align:center;max-width:620px;opacity:0;transform:translateY(40px) scale(0.94);animation:heroReveal 1.4s var(--ease-out-expo) 0.4s forwards;position:relative;z-index:1}
+@keyframes heroReveal{to{opacity:1;transform:translateY(0) scale(1)}}
+.hero-date{display:inline-flex;align-items:center;gap:var(--space-xs);font-size:0.85rem;color:var(--accent-gold);margin-bottom:var(--space-lg);padding:var(--space-xs) var(--space-md);background:rgba(255,216,156,0.06);border-radius:50px;border:1px solid rgba(255,216,156,0.15);opacity:0;animation:fadeSlideUp 0.8s var(--ease-out-expo) 0.8s forwards}
+@keyframes fadeSlideUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+.hero-main-text{margin-bottom:var(--space-lg)}
+.hero-line{font-family:var(--font-elegant);font-size:clamp(1.25rem,3.8vw,1.7rem);color:var(--text-main);line-height:1.9;overflow:hidden}
+.hero-line .word{display:inline-block;opacity:0;transform:translateY(20px);animation:wordReveal 0.6s var(--ease-out-expo) forwards}
+@keyframes wordReveal{to{opacity:1;transform:translateY(0)}}
+.hero-subtitle{font-family:var(--font-body);font-size:1rem;color:var(--text-muted);opacity:0;position:relative;display:inline-block}
+.hero-subtitle.is-revealed{animation:subtitleReveal 0.8s var(--ease-out-expo) forwards}
+@keyframes subtitleReveal{to{opacity:1}}
+.hero-subtitle::before{content:'';position:absolute;top:50%;left:-10%;width:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent-pink),transparent);transform:translateY(-50%);animation:none}
+.hero-subtitle.is-revealed::before{animation:sparkLine 0.8s var(--ease-out-expo) 0.3s forwards}
+@keyframes sparkLine{0%{width:0;left:-10%;opacity:0}50%{width:120%;opacity:1}100%{width:0;left:110%;opacity:0}}
+
+/* Scroll Indicator */
+.scroll-indicator{position:absolute;bottom:var(--space-lg);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:var(--space-xs);color:var(--text-soft);font-size:0.8rem;opacity:0;animation:fadeIn 0.8s var(--ease-out-expo) 2.5s forwards;cursor:pointer;transition:all var(--transition-base);padding:var(--space-sm)}
+.scroll-indicator:hover{color:var(--accent-pink)}
+.scroll-indicator:hover .scroll-glow{opacity:1}
+.scroll-arrow{font-size:1.1rem;animation:bounceArrow 2.5s ease-in-out infinite}
+.scroll-glow{position:absolute;width:40px;height:40px;border-radius:50%;background:radial-gradient(circle,rgba(255,126,179,0.3) 0%,transparent 70%);opacity:0;transition:opacity 0.4s ease;animation:glowPulse 3s ease-in-out infinite}
+@keyframes bounceArrow{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+@keyframes glowPulse{0%,100%{transform:scale(1);opacity:0.3}50%{transform:scale(1.3);opacity:0.6}}
+@keyframes fadeIn{to{opacity:1}}
+
+/* SECTION 2 */
+#section-2{padding:var(--space-2xl) 0;position:relative}
+.split-layout{display:grid;grid-template-columns:1fr;gap:var(--space-xl);align-items:center}
+.text-block{opacity:0;transform:translateX(-40px);transition:all var(--transition-slow)}
+.text-block.is-visible{opacity:1;transform:translateX(0)}
+.text-block p{font-family:var(--font-elegant);font-size:clamp(1.1rem,3vw,1.3rem);color:var(--text-muted);line-height:2.1;margin-bottom:var(--space-sm)}
+.image-composition{position:relative;height:420px;opacity:0;transform:translateX(40px);transition:all var(--transition-slow) 0.2s}
+.image-composition.is-visible{opacity:1;transform:translateX(0)}
+.composition-img{position:absolute;border-radius:18px;box-shadow:var(--shadow-soft);overflow:hidden;transition:transform 0.6s var(--ease-out-back)}
+.composition-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s var(--ease-out-expo)}
+.composition-img--main{width:68%;height:78%;top:0;left:0;transform:rotate(-4deg);z-index:2}
+.composition-img--small{width:52%;height:58%;bottom:0;right:0;transform:rotate(5deg);z-index:1}
+.composition-img:hover{transform:rotate(0deg) translateY(-10px) scale(1.03);z-index:10}
+.composition-img:hover img{transform:scale(1.08)}
+.deco-heart{position:absolute;font-size:1.4rem;opacity:0;animation:decoFloat 3s ease-in-out infinite}
+.deco-heart--1{top:-15px;right:18%;animation-delay:0s}
+.deco-heart--2{bottom:8%;left:28%;animation-delay:1s;font-size:1.1rem}
+.is-visible .deco-heart{opacity:0.7}
+@keyframes decoFloat{0%,100%{transform:translateY(0) scale(1);opacity:0.7}50%{transform:translateY(-12px) scale(1.1);opacity:1}}
+
+/* GALLERY */
+#gallery{padding:var(--space-2xl) 0;position:relative}
+.gallery-header{text-align:center;margin-bottom:var(--space-xl);opacity:0;transform:translateY(25px);transition:all var(--transition-slow)}
+.gallery-header.is-visible{opacity:1;transform:translateY(0)}
+.gallery-header p{font-family:var(--font-elegant);font-size:clamp(1.1rem,3vw,1.3rem);color:var(--text-muted);max-width:520px;margin:0 auto}
+
+/* Timeline Thread */
+.gallery-wrapper{position:relative}
+.timeline-thread{position:absolute;top:0;left:50%;width:2px;height:100%;background:linear-gradient(180deg,transparent 0%,rgba(176,149,255,0.2) 10%,rgba(255,126,179,0.2) 50%,rgba(176,149,255,0.2) 90%,transparent 100%);transform:translateX(-50%);z-index:0;opacity:0;transition:opacity 1s ease}
+.gallery-wrapper.is-visible .timeline-thread{opacity:1}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md);position:relative;z-index:1}
+.polaroid{background:#fefefe;padding:8px 8px 38px;border-radius:4px;box-shadow:0 10px 35px rgba(0,0,0,0.35);cursor:pointer;opacity:0;transform:translateY(35px) rotate(var(--rotation,0deg));transition:all 0.6s var(--ease-out-back)}
+.polaroid.is-visible{opacity:1;transform:translateY(0) rotate(var(--rotation,0deg))}
+.polaroid:hover{transform:translateY(-10px) rotate(0deg) scale(1.04);box-shadow:0 20px 50px rgba(0,0,0,0.45);z-index:10}
+.polaroid:nth-child(odd){--rotation:-2.5deg}
+.polaroid:nth-child(even){--rotation:2.5deg}
+.polaroid:nth-child(3n){--rotation:-3.5deg}
+.polaroid:nth-child(4n){--rotation:3.5deg}
+.polaroid__img{aspect-ratio:4/5;overflow:hidden;border-radius:2px}
+.polaroid__img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s var(--ease-out-expo)}
+.polaroid:hover .polaroid__img img{transform:scale(1.08)}
+.polaroid__caption{font-family:var(--font-script);font-size:0.9rem;color:#3a3a3a;text-align:center;margin-top:10px;padding:0 6px}
+.polaroid:nth-child(1){transition-delay:0.05s}.polaroid:nth-child(2){transition-delay:0.1s}.polaroid:nth-child(3){transition-delay:0.15s}.polaroid:nth-child(4){transition-delay:0.2s}.polaroid:nth-child(5){transition-delay:0.25s}.polaroid:nth-child(6){transition-delay:0.3s}.polaroid:nth-child(7){transition-delay:0.35s}.polaroid:nth-child(8){transition-delay:0.4s}.polaroid:nth-child(9){transition-delay:0.45s}.polaroid:nth-child(10){transition-delay:0.5s}.polaroid:nth-child(11){transition-delay:0.55s}.polaroid:nth-child(12){transition-delay:0.6s}.polaroid:nth-child(13){transition-delay:0.65s}.polaroid:nth-child(14){transition-delay:0.7s}.polaroid:nth-child(15){transition-delay:0.75s}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(3,2,8,0.96);backdrop-filter:blur(15px);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all 0.5s var(--ease-out-expo)}
+.lightbox.is-open{opacity:1;visibility:visible}
+.lightbox__content{position:relative;max-width:92%;max-height:88vh;transform:scale(0.92) translateY(20px);transition:transform 0.5s var(--ease-out-expo)}
+.lightbox.is-open .lightbox__content{transform:scale(1) translateY(0)}
+.lightbox__img-wrapper{position:relative;overflow:hidden;border-radius:10px}
+.lightbox__img{max-width:100%;max-height:72vh;border-radius:10px;box-shadow:0 40px 100px rgba(0,0,0,0.7);animation:imgZoom 8s ease-in-out infinite alternate}
+@keyframes imgZoom{0%{transform:scale(1)}100%{transform:scale(1.03)}}
+.lightbox__memory-text{position:absolute;bottom:15px;left:15px;font-family:var(--font-elegant);font-size:0.85rem;font-style:italic;color:rgba(255,255,255,0.7);background:rgba(0,0,0,0.5);padding:6px 12px;border-radius:20px;opacity:0;animation:fadeIn 0.5s ease 0.5s forwards}
+.lightbox__caption{font-family:var(--font-script);font-size:1.4rem;color:var(--text-main);text-align:center;margin-top:var(--space-md)}
+.lightbox__close{position:absolute;top:-55px;right:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--text-muted);background:rgba(255,255,255,0.08);border-radius:50%;transition:all var(--transition-base)}
+.lightbox__close:hover{color:var(--text-main);background:rgba(255,255,255,0.15);transform:rotate(90deg)}
+.lightbox__nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--text-muted);background:rgba(255,255,255,0.08);border-radius:50%;transition:all var(--transition-base)}
+.lightbox__nav:hover{color:var(--text-main);background:rgba(255,255,255,0.15)}
+.lightbox__nav--prev{left:-75px}
+.lightbox__nav--next{right:-75px}
+.lightbox__counter{position:absolute;top:-55px;left:0;font-size:0.85rem;color:var(--text-soft)}
+
+/* DEEP FEELINGS */
+#deep-feelings{padding:var(--space-2xl) 0;position:relative}
+.feelings-card{background:linear-gradient(135deg,rgba(176,149,255,0.1) 0%,rgba(255,126,179,0.1) 100%);border:1px solid rgba(255,255,255,0.06);border-radius:36px;padding:var(--space-xl);position:relative;overflow:hidden;opacity:0;transform:translateY(50px);transition:all var(--transition-slow)}
+.feelings-card.is-visible{opacity:1;transform:translateY(0)}
+.feelings-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(176,149,255,0.05) 0%,rgba(255,126,179,0.08) 50%,rgba(176,149,255,0.05) 100%);background-size:200% 200%;animation:gradientShift 8s ease infinite}
+@keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* Sparkles */
+.sparkle{position:absolute;width:4px;height:4px;background:white;border-radius:50%;opacity:0;animation:sparkle 3s ease-in-out infinite}
+.sparkle:nth-child(1){top:10%;left:5%;animation-delay:0s}
+.sparkle:nth-child(2){top:20%;right:8%;animation-delay:0.5s}
+.sparkle:nth-child(3){bottom:15%;left:12%;animation-delay:1s}
+.sparkle:nth-child(4){bottom:25%;right:15%;animation-delay:1.5s}
+.sparkle:nth-child(5){top:50%;left:3%;animation-delay:2s}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:0.8;transform:scale(1)}}
+
+.feelings-label{display:inline-block;margin-bottom:var(--space-md);position:relative;z-index:2}
+.feelings-text{position:relative;z-index:2}
+.feelings-text p{font-family:var(--font-elegant);font-size:clamp(1.15rem,3.5vw,1.4rem);color:var(--text-main);line-height:2.3;margin-bottom:var(--space-md);opacity:0;transform:translateY(20px);transition:all 0.7s var(--ease-out-expo)}
+.feelings-card.is-visible .feelings-text p:nth-child(1){opacity:1;transform:translateY(0);transition-delay:0.3s}
+.feelings-card.is-visible .feelings-text p:nth-child(2){opacity:1;transform:translateY(0);transition-delay:0.5s}
+.feelings-card.is-visible .feelings-text p:nth-child(3){opacity:1;transform:translateY(0);transition-delay:0.7s}
+
+/* Highlight Word with Shimmer */
+.highlight-word{background:linear-gradient(90deg,var(--accent-pink),var(--accent-lilac),var(--accent-pink));background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;position:relative;animation:shimmerText 6s ease-in-out infinite}
+@keyframes shimmerText{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.highlight-word::after{content:'';position:absolute;bottom:-3px;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--accent-pink),var(--accent-lilac));opacity:0.6}
+
+.feelings-photo{position:absolute;bottom:var(--space-lg);right:var(--space-lg);width:85px;height:85px;border-radius:50%;border:3px solid rgba(255,255,255,0.15);overflow:hidden;opacity:0.75;box-shadow:0 12px 35px rgba(0,0,0,0.35),0 0 20px rgba(255,126,179,0.2);animation:photoGlow 4s ease-in-out infinite}
+@keyframes photoGlow{0%,100%{box-shadow:0 12px 35px rgba(0,0,0,0.35),0 0 20px rgba(255,126,179,0.2)}50%{box-shadow:0 12px 35px rgba(0,0,0,0.35),0 0 35px rgba(255,126,179,0.35)}}
+.feelings-photo img{width:100%;height:100%;object-fit:cover}
+
+/* ANIMALS */
+#animals{padding:var(--space-2xl) 0}
+.animals-header{text-align:center;margin-bottom:var(--space-xl);opacity:0;transform:translateY(25px);transition:all var(--transition-slow)}
+.animals-header.is-visible{opacity:1;transform:translateY(0)}
+.animals-header p{font-family:var(--font-elegant);font-size:clamp(1.05rem,3vw,1.2rem);color:var(--text-muted);line-height:1.9}
+.carousel-hint{font-size:0.8rem;color:var(--text-soft);margin-top:var(--space-sm);opacity:0;transition:opacity 0.5s ease}
+.animals-header.is-visible .carousel-hint{opacity:1;transition-delay:0.5s}
+
+.carousel-container{position:relative;margin-bottom:var(--space-lg)}
+.carousel{display:flex;gap:var(--space-md);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:var(--space-md) var(--space-xs);margin:0 calc(-1 * var(--space-md));padding-left:var(--space-md);padding-right:var(--space-md);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.carousel::-webkit-scrollbar{display:none}
+
+.animal-card{flex:0 0 200px;scroll-snap-align:center;background:var(--bg-glass);backdrop-filter:blur(15px);border:1px solid var(--border-soft);border-radius:22px;padding:var(--space-md);text-align:center;opacity:0;transform:translateY(35px);transition:all 0.6s var(--ease-out-back);position:relative}
+.animal-card.is-visible{opacity:1;transform:translateY(0)}
+.animal-card:nth-child(1){transition-delay:0.1s}.animal-card:nth-child(2){transition-delay:0.2s}.animal-card:nth-child(3){transition-delay:0.3s}.animal-card:nth-child(4){transition-delay:0.4s}
+.animal-card:hover{transform:translateY(-8px);border-color:var(--border-glow)}
+.animal-card--primary{transform:scale(1.06) translateY(35px);background:linear-gradient(135deg,rgba(255,126,179,0.12) 0%,rgba(176,149,255,0.12) 100%);border-color:rgba(255,126,179,0.25);box-shadow:0 0 35px rgba(255,126,179,0.12)}
+.animal-card--primary.is-visible{transform:scale(1.06) translateY(0);animation:bouncyFloat 3.5s ease-in-out infinite}
+@keyframes bouncyFloat{0%,100%{transform:scale(1.06) translateY(0)}30%{transform:scale(1.06) translateY(-10px)}60%{transform:scale(1.06) translateY(-5px)}}
+
+.animal-card__icon{width:90px;height:90px;margin:0 auto var(--space-sm);border-radius:50%;background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;transition:transform 0.4s var(--ease-elastic)}
+.animal-card:hover .animal-card__icon{transform:scale(1.1)}
+.animal-card--primary:hover .animal-card__icon{animation:emojiJump 0.5s var(--ease-elastic)}
+@keyframes emojiJump{0%,100%{transform:scale(1.1) translateY(0) rotate(0deg)}50%{transform:scale(1.2) translateY(-10px) rotate(10deg)}}
+.animal-card__icon-emoji{font-size:2.8rem;transition:transform 0.3s ease}
+.animal-card__name{font-family:var(--font-heading);font-size:1.15rem;color:var(--text-main);margin-bottom:var(--space-xs)}
+.animal-card__desc{font-size:0.82rem;color:var(--text-muted);line-height:1.5}
+
+.carousel-nav{display:none}
+.animals-footer{text-align:center;font-family:var(--font-elegant);font-size:1rem;font-style:italic;color:var(--text-soft);opacity:0;transform:translateY(18px);transition:all var(--transition-slow) 0.4s}
+.animals-footer.is-visible{opacity:1;transform:translateY(0)}
+
+/* CLOSING */
+#closing{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:var(--space-2xl) var(--space-md);position:relative;overflow:hidden}
+#closing::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(255,126,179,0.12) 0%,transparent 55%),radial-gradient(ellipse at 50% 70%,rgba(176,149,255,0.1) 0%,transparent 55%);pointer-events:none}
+#closing::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent 40%,rgba(7,4,12,0.5) 100%);pointer-events:none}
+
+/* Closing Bokeh */
+.closing-bokeh{position:absolute;border-radius:50%;filter:blur(50px);opacity:0;animation:closingBokeh 10s ease-in-out infinite}
+.closing-bokeh:nth-child(1){width:180px;height:180px;background:rgba(255,126,179,0.15);top:15%;left:10%;animation-delay:0s}
+.closing-bokeh:nth-child(2){width:140px;height:140px;background:rgba(176,149,255,0.12);bottom:20%;right:15%;animation-delay:-3s}
+.closing-bokeh:nth-child(3){width:100px;height:100px;background:rgba(255,216,156,0.1);top:60%;left:20%;animation-delay:-6s}
+@keyframes closingBokeh{0%,100%{opacity:0.3;transform:scale(1)}50%{opacity:0.6;transform:scale(1.2)}}
+
+.closing-content{text-align:center;max-width:680px;position:relative;z-index:2}
+.closing-main{margin-bottom:var(--space-xl);opacity:0;transform:translateY(35px);transition:all var(--transition-slow)}
+.closing-main.is-visible{opacity:1;transform:translateY(0)}
+.closing-main .script-text{margin-bottom:var(--space-md);display:block;text-shadow:0 0 40px rgba(255,126,179,0.3)}
+.closing-main p{font-family:var(--font-elegant);font-size:clamp(1.1rem,3vw,1.3rem);color:var(--text-muted);line-height:1.9;margin-bottom:var(--space-sm)}
+.closing-birthday{font-family:var(--font-heading);font-size:clamp(1.3rem,4vw,1.6rem);color:var(--accent-pink-soft);margin-top:var(--space-md);animation:glowText 3s ease-in-out infinite}
+@keyframes glowText{0%,100%{text-shadow:0 0 20px rgba(255,179,208,0.3)}50%{text-shadow:0 0 35px rgba(255,179,208,0.5)}}
+
+/* Gift Hints with SVG Icons */
+.gift-hints{display:flex;justify-content:center;gap:var(--space-lg);margin-bottom:var(--space-xl);flex-wrap:wrap;opacity:0;transform:translateY(25px);transition:all var(--transition-slow) 0.3s}
+.gift-hints.is-visible{opacity:1;transform:translateY(0)}
+.gift-hint{display:flex;flex-direction:column;align-items:center;gap:var(--space-xs);padding:var(--space-md) var(--space-lg);background:var(--bg-glass);border:1px solid var(--border-soft);border-radius:18px;min-width:150px;transition:all var(--transition-base)}
+.gift-hint:hover{transform:translateY(-5px);border-color:var(--accent-pink);box-shadow:0 10px 30px rgba(255,126,179,0.15)}
+.gift-hint__icon{width:50px;height:50px;display:flex;align-items:center;justify-content:center}
+.gift-hint__icon svg{width:100%;height:100%}
+.gift-hint--necklace .gift-hint__icon{animation:shimmerIcon 4s ease-in-out infinite}
+@keyframes shimmerIcon{0%,100%{filter:drop-shadow(0 0 5px rgba(255,126,179,0.3))}50%{filter:drop-shadow(0 0 15px rgba(255,126,179,0.6))}}
+.gift-hint__text{font-size:0.85rem;color:var(--text-muted);text-align:center}
+.gift-hint__text small{display:block;font-size:0.75rem;color:var(--text-soft);margin-top:4px}
+
+/* Replay Button with Ripple */
+.replay-btn{display:inline-flex;align-items:center;gap:var(--space-xs);padding:var(--space-sm) var(--space-lg);font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--text-main);background:linear-gradient(135deg,var(--accent-pink) 0%,var(--accent-lilac) 100%);border-radius:50px;box-shadow:0 12px 35px rgba(255,126,179,0.35);transition:all var(--transition-base);opacity:0;transform:translateY(25px);position:relative;overflow:hidden}
+.replay-btn.is-visible{opacity:1;transform:translateY(0);transition-delay:0.5s}
+.replay-btn:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(255,126,179,0.45)}
+.replay-btn:active{transform:translateY(-2px)}
+.replay-btn .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,0.4);transform:scale(0);animation:rippleEffect 0.6s ease-out}
+@keyframes rippleEffect{to{transform:scale(4);opacity:0}}
+
+/* Hearts Container */
+.hearts-container{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.falling-heart{position:absolute;top:-60px;font-size:1.5rem;opacity:0;will-change:transform;animation:fallHeart var(--fall-duration,3.5s) ease-in forwards;animation-delay:var(--fall-delay,0s)}
+@keyframes fallHeart{0%{opacity:1;transform:translateY(0) rotate(0deg) scale(var(--scale,1))}15%{opacity:1}100%{opacity:0;transform:translateY(calc(100vh + 100px)) rotate(var(--rotation,360deg)) scale(var(--scale,1))}}
+
+/* FOOTER */
+footer{padding:var(--space-xl) var(--space-md);text-align:center;border-top:1px solid var(--border-soft);background:linear-gradient(180deg,transparent 0%,rgba(176,149,255,0.02) 100%)}
+.footer-signature{font-family:var(--font-script);font-size:1.6rem;color:var(--text-muted);margin-bottom:var(--space-sm)}
+.footer-date{font-family:var(--font-body);font-size:0.9rem;color:var(--text-soft);letter-spacing:0.12em}
+
+/* MUSIC CONTROL */
+.music-control{position:fixed;bottom:var(--space-lg);right:var(--space-md);z-index:100}
+.music-btn{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--accent-pink) 0%,var(--accent-lilac) 100%);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:white;box-shadow:0 10px 30px rgba(255,126,179,0.4);transition:all var(--transition-base);position:relative}
+.music-btn:hover{transform:scale(1.12);box-shadow:0 14px 40px rgba(255,126,179,0.55)}
+.music-btn:active{transform:scale(1.08)}
+.music-btn.is-playing{animation:musicPulse 2s ease-in-out infinite}
+@keyframes musicPulse{0%,100%{box-shadow:0 10px 30px rgba(255,126,179,0.4)}50%{box-shadow:0 10px 40px rgba(255,126,179,0.6),0 0 25px rgba(176,149,255,0.4)}}
+.music-btn__ring{position:absolute;inset:-4px;border-radius:50%;border:2px solid transparent;opacity:0;transition:all 0.3s ease}
+.music-btn.is-playing .music-btn__ring{border-color:rgba(255,126,179,0.3);opacity:1;animation:ringPulse 1.5s ease-out infinite}
+@keyframes ringPulse{0%{transform:scale(1);opacity:0.6}100%{transform:scale(1.4);opacity:0}}
+.music-tooltip{position:absolute;bottom:calc(100% + 12px);right:0;padding:var(--space-xs) var(--space-sm);background:var(--bg-main);border:1px solid var(--border-soft);border-radius:10px;font-size:0.78rem;color:var(--text-muted);white-space:nowrap;opacity:0;transform:translateY(8px);pointer-events:none;transition:all var(--transition-base)}
+.music-control:hover .music-tooltip{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(min-width:768px){
+  :root{--space-lg:3rem;--space-xl:5rem;--space-2xl:8rem}
+  .split-layout{grid-template-columns:1fr 1fr}
+  .image-composition{height:480px}
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+  .feelings-card{padding:var(--space-xl) calc(var(--space-xl) * 1.5)}
+  .carousel{justify-content:center;gap:var(--space-lg)}
+  .animal-card{flex:0 0 220px}
+  .lightbox__nav--prev{left:-85px}
+  .lightbox__nav--next{right:-85px}
+}
+@media(min-width:1024px){
+  .container{max-width:1100px}
+  .hero-content{max-width:720px}
+  .image-composition{height:520px}
+  .feelings-photo{width:100px;height:100px}
+  .carousel-nav{display:flex;position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;align-items:center;justify-content:center;background:var(--bg-glass);border:1px solid var(--border-soft);border-radius:50%;font-size:1.2rem;color:var(--text-muted);transition:all var(--transition-base);z-index:10}
+  .carousel-nav:hover{background:var(--accent-pink);color:white;border-color:var(--accent-pink)}
+  .carousel-nav--prev{left:-25px}
+  .carousel-nav--next{right:-25px}
+}
+
+/* REDUCED MOTION */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.15s !important}
+  .bokeh-layer,.floating-shapes,.floating-heart,.sparkle,.closing-bokeh{display:none}
+  .hero-content,.hero-date,.hero-line .word,.hero-subtitle,.scroll-indicator{opacity:1;transform:none;animation:none}
+  .lightbox__img{animation:none}
+  .animal-card--primary.is-visible{animation:none;transform:scale(1.06)}
+  body::before,.feelings-card::before{animation:none}
+}
+  </style>
+</head>
+<body>
+  <!-- Bokeh Particles -->
+  <div class="bokeh-layer" aria-hidden="true">
+    <div class="bokeh"></div><div class="bokeh"></div><div class="bokeh"></div><div class="bokeh"></div><div class="bokeh"></div>
+  </div>
+
+  <!-- Floating Shapes -->
+  <div class="floating-shapes" aria-hidden="true">
+    <div class="shape shape--1"></div>
+    <div class="shape shape--2"></div>
+    <div class="shape shape--3"></div>
+    <span class="floating-heart">💕</span>
+    <span class="floating-heart">💗</span>
+    <span class="floating-heart">💖</span>
+    <span class="floating-heart">✨</span>
+  </div>
+
+  <!-- Section Transition Overlay -->
+  <div class="section-transition" id="section-transition" aria-hidden="true">
+    <span class="section-transition__label"></span>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- Audio -->
+  <audio id="bg-music" src="audio/harveysong.mp3" preload="auto"></audio>
+
+  <!-- Music Control -->
+  <div class="music-control">
+    <button class="music-btn" id="music-btn" aria-label="Müziği çal" aria-pressed="false">
+      <span class="music-btn__ring"></span>
+      <span class="music-icon">▶</span>
+    </button>
+    <span class="music-tooltip" id="music-tooltip">Harvey'i aç</span>
+  </div>
+
+  <header>
+    <section id="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-content glass-card">
+        <div class="hero-date">
+          <span>12 Aralık</span><span>•</span><span>Tatlışımın doğum günü 🎂</span>
+        </div>
+        <div class="hero-main-text">
+          <p class="hero-line" data-text="Bugün dünyanın en özel günü, çünkü doğum günün."></p>
+          <p class="hero-line" data-text="Sana ufak bi sürprizim var."></p>
+        </div>
+        <p class="hero-subtitle">Hazır mısın?</p>
+      </div>
+      <a href="#section-2" class="scroll-indicator" id="scroll-indicator" aria-label="Aşağı kaydır">
+        <span class="scroll-glow" aria-hidden="true"></span>
+        <span>Aşağı kaydır</span>
+        <span class="scroll-arrow">↓</span>
+      </a>
+    </section>
+  </header>
+
+  <main>
+    <section id="section-2" data-section-label="Senin günün">
+      <div class="container">
+        <div class="split-layout">
+          <div class="text-block">
+            <span class="section-label">Senin günün 💫</span>
+            <p>Beni her günümde mutlu eden sensin, bugün de senin günün.</p>
+            <p>Mutlu etme sırası bana geçsin istedim.</p>
+          </div>
+          <div class="image-composition">
+            <div class="composition-img composition-img--main">
+              <img src="images/section2-main.jpg" alt="İkbal'in güzel bir fotoğrafı">
+            </div>
+            <div class="composition-img composition-img--small">
+              <img src="images/section2-small.jpg" alt="İkbal'in bir diğer güzel anı">
+            </div>
+            <span class="deco-heart deco-heart--1" aria-hidden="true">💕</span>
+            <span class="deco-heart deco-heart--2" aria-hidden="true">✨</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" data-section-label="Her anın ayrı güzel">
+      <div class="container">
+        <div class="gallery-header">
+          <span class="section-label">Her anın ayrı güzel 📷</span>
+          <p>Her fotoğrafında ayrı bi güzelsin bak, gözlerimi alamıyorum.</p>
+        </div>
+        <div class="gallery-wrapper">
+          <div class="timeline-thread" aria-hidden="true"></div>
+          <div class="gallery-grid">
+            <article class="polaroid" data-index="0"><div class="polaroid__img"><img src="images/gallery-01.jpg" alt="İkbal'in gülümsediği bir fotoğraf"></div><p class="polaroid__caption">Bu gülüşün... 💫</p></article>
+            <article class="polaroid" data-index="1"><div class="polaroid__img"><img src="images/gallery-02.jpg" alt="İkbal'in tatlı bir anı"></div><p class="polaroid__caption">Bu bakışın... ✨</p></article>
+            <article class="polaroid" data-index="2"><div class="polaroid__img"><img src="images/gallery-03.jpg" alt="İkbal'in güzel bir pozu"></div><p class="polaroid__caption">Bu anın... 💕</p></article>
+            <article class="polaroid" data-index="3"><div class="polaroid__img"><img src="images/gallery-04.jpg" alt="İkbal'in neşeli bir fotoğrafı"></div><p class="polaroid__caption">Her şeyin... 🌸</p></article>
+            <article class="polaroid" data-index="4"><div class="polaroid__img"><img src="images/gallery-05.jpg" alt="İkbal'in mutlu bir anı"></div><p class="polaroid__caption">Bu tatlılığın... 🩷</p></article>
+            <article class="polaroid" data-index="5"><div class="polaroid__img"><img src="images/gallery-06.jpg" alt="İkbal'in güler yüzlü fotoğrafı"></div><p class="polaroid__caption">Bu enerjin... ⚡</p></article>
+            <article class="polaroid" data-index="6"><div class="polaroid__img"><img src="images/gallery-07.jpg" alt="İkbal'in sevimli bir pozu"></div><p class="polaroid__caption">Bu huzurun... 🌙</p></article>
+            <article class="polaroid" data-index="7"><div class="polaroid__img"><img src="images/gallery-08.jpg" alt="İkbal'in parlak gözleri"></div><p class="polaroid__caption">Bu ışığın... 💖</p></article>
+            <article class="polaroid" data-index="8"><div class="polaroid__img"><img src="images/gallery-09.jpg" alt="İkbal'in doğal güzelliği"></div><p class="polaroid__caption">Bu doğallığın... 🌿</p></article>
+            <article class="polaroid" data-index="9"><div class="polaroid__img"><img src="images/gallery-10.jpg" alt="İkbal'in keyifli bir anı"></div><p class="polaroid__caption">Bu neşen... 🎀</p></article>
+            <article class="polaroid" data-index="10"><div class="polaroid__img"><img src="images/gallery-11.jpg" alt="İkbal'in gülümseyen yüzü"></div><p class="polaroid__caption">Bu sıcaklığın... 🔥</p></article>
+            <article class="polaroid" data-index="11"><div class="polaroid__img"><img src="images/gallery-12.jpg" alt="İkbal'in çekici bir fotoğrafı"></div><p class="polaroid__caption">Bu güzelliğin... 💎</p></article>
+            <article class="polaroid" data-index="12"><div class="polaroid__img"><img src="images/gallery-13.jpg" alt="İkbal'in eğlenceli bir pozu"></div><p class="polaroid__caption">Bu eğlencen... 🎉</p></article>
+            <article class="polaroid" data-index="13"><div class="polaroid__img"><img src="images/gallery-14.jpg" alt="İkbal'in sakin bir anı"></div><p class="polaroid__caption">Bu dinginliğin... 🕊️</p></article>
+            <article class="polaroid" data-index="14"><div class="polaroid__img"><img src="images/gallery-15.jpg" alt="İkbal'in harika bir fotoğrafı"></div><p class="polaroid__caption">Her şeyin... 💗</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="deep-feelings" data-section-label="Her geçen gün">
+      <div class="container">
+        <div class="feelings-card">
+          <div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div>
+          <span class="section-label feelings-label">Her geçen gün biraz daha 💌</span>
+          <div class="feelings-text">
+            <p>Seni tanıdıkça daha da kapılıyorum sana, hep daha çok hoşuma gidiyorsun.</p>
+            <p>O güzel <span class="highlight-word">gözlerini</span> görmek bile günümü mutlu etmeye yetiyor.</p>
+            <p>Bu sitede sana bunu hatırlatmak istedim.</p>
+          </div>
+          <div class="feelings-photo">
+            <img src="images/eyes-closeup.jpg" alt="İkbal'in güzel gözleri">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="animals" data-section-label="Evimiz ve minik sakinleri">
+      <div class="container">
+        <div class="animals-header">
+          <span class="section-label">Evimiz ve minik sakinleri 🏡</span>
+          <p>Bir de evimizde olacak hayvanişkolar vardı...</p>
+          <p>İlk en tatlısını alırız ama: Hamster. Tatlı şeyler sana yakışıyor.</p>
+          <p class="carousel-hint">Kaydır veya oklarla gezin 🐾</p>
+        </div>
+        <div class="carousel-container">
+          <button class="carousel-nav carousel-nav--prev" aria-label="Önceki">❮</button>
+          <div class="carousel" id="animals-carousel">
+            <article class="animal-card animal-card--primary" id="hamster-card">
+              <div class="speech-bubble">Tamam, ilk ben geliyorum! 🐹✨</div>
+              <div class="animal-card__icon"><span class="animal-card__icon-emoji">🐹</span></div>
+              <h3 class="animal-card__name">Hamster</h3>
+              <p class="animal-card__desc">İlk ve en tatlısı. Sana yakışıyor!</p>
+            </article>
+            <article class="animal-card" id="cat-card">
+              <div class="speech-bubble">Evi ben yöneteceğim 😼</div>
+              <div class="animal-card__icon"><span class="animal-card__icon-emoji">🐱</span></div>
+              <h3 class="animal-card__name">Kedi</h3>
+              <p class="animal-card__desc">Seninle kanepe ortağı olacak.</p>
+            </article>
+            <article class="animal-card" id="dog-card">
+              <div class="speech-bubble">Hadi dışarı çıkalım! 🐕</div>
+              <div class="animal-card__icon"><span class="animal-card__icon-emoji">🐶</span></div>
+              <h3 class="animal-card__name">Köpek</h3>
+              <p class="animal-card__desc">Sabah koşularımızın arkadaşı.</p>
+            </article>
+            <article class="animal-card" id="bunny-card">
+              <div class="speech-bubble">Senin gibi yumuşacığım 🐰</div>
+              <div class="animal-card__icon"><span class="animal-card__icon-emoji">🐰</span></div>
+              <h3 class="animal-card__name">Tavşan</h3>
+              <p class="animal-card__desc">Senin kadar yumuşacık.</p>
+            </article>
+          </div>
+          <button class="carousel-nav carousel-nav--next" aria-label="Sonraki">❯</button>
+        </div>
+        <p class="animals-footer">Bir gün, hepsi evin içinde koşturuyor olacak. Sen kanepede, ben de yanında.</p>
+      </div>
+    </section>
+
+    <section id="closing" data-section-label="Final">
+      <div class="closing-bokeh"></div><div class="closing-bokeh"></div><div class="closing-bokeh"></div>
+      <div class="hearts-container" id="hearts-container" aria-hidden="true"></div>
+      <div class="closing-content">
+        <div class="closing-main">
+          <span class="script-text">İyi ki doğmuşsun İkbal, iyi ki de hayatıma girmişsin.</span>
+          <p>Asıl hediyeyi vereceğim an bile beni heyecanlandırıyor.</p>
+          <p class="closing-birthday">Mutlu yıllar, tatlışım 🩷</p>
+        </div>
+        <div class="gift-hints">
+          <div class="gift-hint">
+            <div class="gift-hint__icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 56C32 56 8 40 8 24C8 16 14 10 22 10C26 10 30 12 32 16C34 12 38 10 42 10C50 10 56 16 56 24C56 40 32 56 32 56Z" fill="url(#lilyGrad)" opacity="0.3"/>
+                <path d="M32 12V56M24 20C20 24 18 32 20 40M40 20C44 24 46 32 44 40M28 16C24 18 20 24 22 32M36 16C40 18 44 24 42 32" stroke="url(#lilyGrad)" stroke-width="2" stroke-linecap="round"/>
+                <ellipse cx="32" cy="10" rx="4" ry="2" fill="#ffb3d0"/>
+                <defs><linearGradient id="lilyGrad" x1="8" y1="10" x2="56" y2="56"><stop stop-color="#ff7eb3"/><stop offset="1" stop-color="#ffb3d0"/></linearGradient></defs>
+              </svg>
+            </div>
+            <span class="gift-hint__text">Lilyum buketi<small>En sevdiğin çiçek</small></span>
+          </div>
+          <div class="gift-hint gift-hint--necklace">
+            <div class="gift-hint__icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 20C12 14 20 8 32 8C44 8 52 14 52 20" stroke="url(#neckGrad)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M32 52C32 52 18 42 18 32C18 26 24 22 32 28C40 22 46 26 46 32C46 42 32 52 32 52Z" fill="url(#heartGrad)"/>
+                <circle cx="32" cy="36" r="6" fill="rgba(255,255,255,0.3)"/>
+                <defs><linearGradient id="neckGrad" x1="12" y1="8" x2="52" y2="20"><stop stop-color="#ffd89c"/><stop offset="1" stop-color="#ffb3d0"/></linearGradient><linearGradient id="heartGrad" x1="18" y1="22" x2="46" y2="52"><stop stop-color="#ff7eb3"/><stop offset="1" stop-color="#b095ff"/></linearGradient></defs>
+              </svg>
+            </div>
+            <span class="gift-hint__text">Kalp kolye<small>İçinde çocukluk fotoğraflarımız</small></span>
+          </div>
+        </div>
+        <button class="replay-btn" id="replay-btn">
+          <span>Bu anı tekrar yaşa</span><span>💗</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-signature">Bu site sadece senin için yazıldı. — Mehmet</p>
+    <p class="footer-date">12.12.2024</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotoğraf galerisi">
+    <div class="lightbox__content">
+      <button class="lightbox__close" aria-label="Kapat">×</button>
+      <span class="lightbox__counter"></span>
+      <button class="lightbox__nav lightbox__nav--prev" aria-label="Önceki fotoğraf">❮</button>
+      <div class="lightbox__img-wrapper">
+        <img class="lightbox__img" src="" alt="">
+        <span class="lightbox__memory-text">Bu anı hatırlıyor musun?</span>
+      </div>
+      <button class="lightbox__nav lightbox__nav--next" aria-label="Sonraki fotoğraf">❯</button>
+      <p class="lightbox__caption"></p>
+    </div>
+  </div>
+
+  <script>
+/* ═══════════════════════════════════════════════════════════════
+   V2 CINEMATIC BIRTHDAY SITE - VANILLA JS
+   ═══════════════════════════════════════════════════════════════ */
+
+(function() {
+  'use strict';
+
+  // Reduced motion check
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ═══════════════════════════════════════════════════════════════
+  // HERO WORD-BY-WORD REVEAL
+  // ═══════════════════════════════════════════════════════════════
+  function initHeroReveal() {
+    const heroLines = document.querySelectorAll('.hero-line[data-text]');
+    const subtitle = document.querySelector('.hero-subtitle');
+    let totalDelay = 800;
+
+    heroLines.forEach((line, lineIndex) => {
+      const text = line.dataset.text;
+      const words = text.split(' ');
+      line.innerHTML = '';
+
+      words.forEach((word, wordIndex) => {
+        const span = document.createElement('span');
+        span.className = 'word';
+        span.textContent = word + ' ';
+        span.style.animationDelay = `${totalDelay}ms`;
+        line.appendChild(span);
+        totalDelay += 80;
+      });
+      totalDelay += 200;
+    });
+
+    // Subtitle reveal with spark
+    setTimeout(() => {
+      subtitle.classList.add('is-revealed');
+    }, totalDelay);
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // PARALLAX ON FLOATING SHAPES (Desktop Only)
+  // ═══════════════════════════════════════════════════════════════
+  function initParallax() {
+    if (prefersReducedMotion || window.innerWidth < 768) return;
+
+    const shapes = document.querySelectorAll('.shape');
+    const bokehs = document.querySelectorAll('.bokeh');
+    const intensity = 0.02;
+
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX - window.innerWidth / 2) * intensity;
+      const y = (e.clientY - window.innerHeight / 2) * intensity;
+
+      shapes.forEach((shape, i) => {
+        const factor = (i + 1) * 0.5;
+        shape.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+      });
+
+      bokehs.forEach((bokeh, i) => {
+        const factor = (i + 1) * 0.3;
+        bokeh.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+      });
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // SECTION TRANSITIONS
+  // ═══════════════════════════════════════════════════════════════
+  function initSectionTransitions() {
+    if (prefersReducedMotion) return;
+
+    const overlay = document.getElementById('section-transition');
+    const label = overlay.querySelector('.section-transition__label');
+    const sections = document.querySelectorAll('section[data-section-label]');
+    let lastSection = null;
+    let transitionTimeout = null;
+
+    const transitionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+          const section = entry.target;
+          if (lastSection && lastSection !== section) {
+            const sectionLabel = section.dataset.sectionLabel;
+            if (sectionLabel && !transitionTimeout) {
+              label.textContent = sectionLabel + '...';
+              overlay.classList.add('is-active');
+              transitionTimeout = setTimeout(() => {
+                overlay.classList.remove('is-active');
+                transitionTimeout = null;
+              }, 900);
+            }
+          }
+          lastSection = section;
+        }
+      });
+    }, { threshold: [0.3] });
+
+    sections.forEach(s => transitionObserver.observe(s));
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // SCROLL REVEAL WITH INTERSECTION OBSERVER
+  // ═══════════════════════════════════════════════════════════════
+  function initScrollReveal() {
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+
+          // Trigger hearts on closing section
+          if (entry.target.id === 'closing' && !entry.target.dataset.heartsTriggered) {
+            entry.target.dataset.heartsTriggered = 'true';
+            setTimeout(createHearts, 400);
+          }
+        }
+      });
+    }, observerOptions);
+
+    const elements = document.querySelectorAll(
+      '.text-block, .image-composition, .gallery-header, .gallery-wrapper, .polaroid, ' +
+      '.feelings-card, .animals-header, .animal-card, .animals-footer, ' +
+      '.closing-main, .gift-hints, .replay-btn, #closing'
+    );
+    elements.forEach(el => revealObserver.observe(el));
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // MUSIC CONTROL
+  // ═══════════════════════════════════════════════════════════════
+  function initMusicControl() {
+    const audio = document.getElementById('bg-music');
+    const btn = document.getElementById('music-btn');
+    const icon = btn.querySelector('.music-icon');
+    const tooltip = document.getElementById('music-tooltip');
+
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      } else {
+        audio.pause();
+      }
+    });
+
+    audio.addEventListener('play', () => {
+      btn.classList.add('is-playing');
+      btn.setAttribute('aria-pressed', 'true');
+      icon.textContent = '⏸';
+      tooltip.textContent = 'Müziği durdur';
+    });
+
+    audio.addEventListener('pause', () => {
+      btn.classList.remove('is-playing');
+      btn.setAttribute('aria-pressed', 'false');
+      icon.textContent = '▶';
+      tooltip.textContent = "Harvey'i aç";
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // LIGHTBOX WITH CINEMATIC ZOOM
+  // ═══════════════════════════════════════════════════════════════
+  let lightboxNavCount = 0;
+
+  function initLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const img = lightbox.querySelector('.lightbox__img');
+    const caption = lightbox.querySelector('.lightbox__caption');
+    const counter = lightbox.querySelector('.lightbox__counter');
+    const closeBtn = lightbox.querySelector('.lightbox__close');
+    const prevBtn = lightbox.querySelector('.lightbox__nav--prev');
+    const nextBtn = lightbox.querySelector('.lightbox__nav--next');
+    const polaroids = document.querySelectorAll('.polaroid');
+
+    const galleryData = [];
+    let currentIndex = 0;
+
+    polaroids.forEach((p, i) => {
+      const imgEl = p.querySelector('img');
+      const capEl = p.querySelector('.polaroid__caption');
+      galleryData.push({
+        src: imgEl.src,
+        alt: imgEl.alt,
+        caption: capEl ? capEl.textContent : ''
+      });
+      p.addEventListener('click', () => openLightbox(i));
+    });
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateContent();
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      lightboxNavCount = 0;
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    function updateContent() {
+      const data = galleryData[currentIndex];
+      img.src = data.src;
+      img.alt = data.alt;
+      caption.textContent = data.caption;
+      counter.textContent = `${currentIndex + 1} / ${galleryData.length}`;
+    }
+
+    function navigate(dir) {
+      currentIndex = (currentIndex + dir + galleryData.length) % galleryData.length;
+      updateContent();
+      lightboxNavCount++;
+
+      // Easter egg: rapid navigation
+      if (lightboxNavCount >= 4) {
+        showToast('Bu kadar güzelliğe kalbim zor dayanıyor 💗');
+        lightboxNavCount = 0;
+      }
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', () => navigate(-1));
+    nextBtn.addEventListener('click', () => navigate(1));
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // CAROUSEL
+  // ═══════════════════════════════════════════════════════════════
+  function initCarousel() {
+    const carousel = document.getElementById('animals-carousel');
+    const prevBtn = document.querySelector('.carousel-nav--prev');
+    const nextBtn = document.querySelector('.carousel-nav--next');
+
+    if (prevBtn) prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -250, behavior: 'smooth' }));
+    if (nextBtn) nextBtn.addEventListener('click', () => carousel.scrollBy({ left: 250, behavior: 'smooth' }));
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // HEARTS ANIMATION
+  // ═══════════════════════════════════════════════════════════════
+  function createHearts() {
+    if (prefersReducedMotion) return;
+
+    const container = document.getElementById('hearts-container');
+    container.innerHTML = '';
+
+    const emojis = ['💕', '💗', '💖', '💝', '💘', '🩷', '❤️', '💜', '✨', '🌸'];
+    const count = 35;
+
+    for (let i = 0; i < count; i++) {
+      const heart = document.createElement('span');
+      heart.className = 'falling-heart';
+      heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+      const left = 10 + Math.random() * 80;
+      const delay = Math.random() * 2;
+      const duration = 3 + Math.random() * 2.5;
+      const scale = 0.7 + Math.random() * 0.8;
+      const rotation = Math.random() > 0.5 ? 360 : -360;
+
+      heart.style.left = `${left}%`;
+      heart.style.setProperty('--fall-delay', `${delay}s`);
+      heart.style.setProperty('--fall-duration', `${duration}s`);
+      heart.style.setProperty('--scale', scale);
+      heart.style.setProperty('--rotation', `${rotation}deg`);
+
+      container.appendChild(heart);
+      setTimeout(() => heart.remove(), (delay + duration) * 1000 + 200);
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // REPLAY BUTTON WITH RIPPLE
+  // ═══════════════════════════════════════════════════════════════
+  function initReplayButton() {
+    const btn = document.getElementById('replay-btn');
+
+    btn.addEventListener('click', (e) => {
+      createHearts();
+
+      // Ripple effect
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      const rect = btn.getBoundingClientRect();
+      ripple.style.left = `${e.clientX - rect.left}px`;
+      ripple.style.top = `${e.clientY - rect.top}px`;
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // TOAST NOTIFICATIONS
+  // ═══════════════════════════════════════════════════════════════
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('is-visible');
+    setTimeout(() => toast.classList.remove('is-visible'), 3000);
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // EASTER EGGS
+  // ═══════════════════════════════════════════════════════════════
+  function initEasterEggs() {
+    // 1. Hamster double-click
+    const hamsterCard = document.getElementById('hamster-card');
+    if (hamsterCard) {
+      hamsterCard.addEventListener('dblclick', () => {
+        showToast('Tamam, ilk sen geliyorsun 🐹✨');
+      });
+    }
+
+    // 2. Scroll indicator long press
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    let holdTimer = null;
+    const holdDuration = 1500;
+
+    if (scrollIndicator) {
+      const startHold = () => {
+        holdTimer = setTimeout(() => {
+          showToast('Seninle her güne böyle başlamak istiyorum. 💕');
+        }, holdDuration);
+      };
+      const cancelHold = () => { if (holdTimer) clearTimeout(holdTimer); };
+
+      scrollIndicator.addEventListener('mousedown', startHold);
+      scrollIndicator.addEventListener('mouseup', cancelHold);
+      scrollIndicator.addEventListener('mouseleave', cancelHold);
+      scrollIndicator.addEventListener('touchstart', startHold);
+      scrollIndicator.addEventListener('touchend', cancelHold);
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // SMOOTH SCROLL
+  // ═══════════════════════════════════════════════════════════════
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // INIT ALL
+  // ═══════════════════════════════════════════════════════════════
+  document.addEventListener('DOMContentLoaded', () => {
+    initHeroReveal();
+    initParallax();
+    initSectionTransitions();
+    initScrollReveal();
+    initMusicControl();
+    initLightbox();
+    initCarousel();
+    initReplayButton();
+    initEasterEggs();
+    initSmoothScroll();
+  });
+
+})();
+  </script>
+</body>
+</html>
+

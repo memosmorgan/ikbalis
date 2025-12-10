@@ -1,0 +1,510 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * ROMANTIC LETTER STYLING - SCOPED TO .rm-letter-card ONLY
+ * ═══════════════════════════════════════════════════════════════════════════
+ * This file contains ONLY styles that target .rm-letter-card and its children.
+ * No global styles, no modifications to other components.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * PAPER / BACKGROUND - VINTAGE TEXTURE
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.rm-letter-card {
+  /* Base paper appearance */
+  position: relative;
+  background: 
+    /* Subtle grain overlay */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E"),
+    /* Warm yellowed paper gradient */
+    linear-gradient(
+      168deg,
+      #fdf8f0 0%,
+      #faf3e8 15%,
+      #f7efe0 35%,
+      #f5ead8 55%,
+      #f2e6d2 75%,
+      #f0e2cc 100%
+    );
+  
+  /* Paper fiber texture via box-shadow insets */
+  box-shadow: 
+    /* Drop shadow - paper on desk effect */
+    0 25px 60px rgba(60, 40, 30, 0.25),
+    0 10px 25px rgba(60, 40, 30, 0.15),
+    0 4px 8px rgba(60, 40, 30, 0.1),
+    /* Inner vignette effect */
+    inset 0 0 80px rgba(180, 150, 120, 0.12),
+    inset 0 0 40px rgba(160, 130, 100, 0.08),
+    /* Subtle edge darkening */
+    inset 2px 2px 8px rgba(120, 90, 60, 0.04),
+    inset -2px -2px 8px rgba(120, 90, 60, 0.04);
+  
+  /* Soften edges like real paper */
+  border: 1px solid rgba(200, 170, 140, 0.35);
+  border-radius: 4px;
+  
+  /* Padding for content breathing room */
+  padding: var(--rm-space-8);
+  max-width: 100%;
+  
+  /* Enable pseudo-elements for effects but contain content */
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Vignette overlay using ::before */
+.rm-letter-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+  
+  /* Soft vignette - darker at edges */
+  background: radial-gradient(
+    ellipse 85% 80% at 50% 45%,
+    transparent 0%,
+    transparent 55%,
+    rgba(180, 150, 110, 0.06) 70%,
+    rgba(160, 130, 90, 0.12) 85%,
+    rgba(140, 110, 70, 0.18) 100%
+  );
+  
+  /* Breathing vignette animation */
+  animation: rm-letter-vignette-breathe 8s ease-in-out infinite;
+}
+
+/* Glowing heart watermark using ::after */
+.rm-letter-card::after {
+  content: '💕';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 180px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(8px);
+  animation: rm-letter-watermark-pulse 12s ease-in-out infinite;
+}
+
+/* Breathing vignette keyframes */
+@keyframes rm-letter-vignette-breathe {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+/* Heart watermark pulse */
+@keyframes rm-letter-watermark-pulse {
+  0%, 100% {
+    opacity: 0.04;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.06;
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * INK / TYPOGRAPHY - HANDWRITTEN FEEL
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Default text styling - elegant serif */
+.rm-letter-card,
+.rm-letter-card * {
+  position: relative;
+  z-index: 2;
+}
+
+.rm-letter-card__body {
+  font-family: 'Crimson Text', 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 2;
+  color: #3b2b2b;
+  letter-spacing: 0.01em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.rm-letter-card__body p {
+  margin-bottom: 1.5em;
+  text-indent: 0;
+  color: #3b2b2b;
+  transition: color 0.3s ease;
+}
+
+/* Subtle ink color variation */
+.rm-letter-card__body p:nth-child(odd) {
+  color: #352626;
+}
+
+.rm-letter-card__body p:nth-child(even) {
+  color: #3f2e2e;
+}
+
+/* Header styling */
+.rm-letter-card__header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(180, 140, 100, 0.25);
+}
+
+.rm-letter-card__title {
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #4a3535;
+  letter-spacing: 0.02em;
+}
+
+/* Emotional closing paragraph - script font */
+.rm-letter-card__closing {
+  font-family: 'Caveat', 'Dancing Script', cursive !important;
+  font-size: 1.4rem !important;
+  line-height: 1.8 !important;
+  color: #3d2828 !important;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+/* Subtle shimmer on closing line */
+.rm-letter-card__closing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  right: -10%;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 200, 180, 0.15) 25%,
+    rgba(255, 220, 200, 0.2) 50%,
+    rgba(255, 200, 180, 0.15) 75%,
+    transparent 100%
+  );
+  opacity: 0;
+  animation: rm-letter-shimmer 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Signature styling */
+.rm-letter-card__signature {
+  font-family: 'Dancing Script', cursive !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: #3a2525 !important;
+  text-align: center;
+  display: block;
+  margin-top: 1rem;
+  position: relative;
+}
+
+/* Hand-drawn underline for signature */
+.rm-letter-card__signature::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(180, 100, 100, 0.4) 20%,
+    rgba(180, 100, 100, 0.6) 50%,
+    rgba(180, 100, 100, 0.4) 80%,
+    transparent 100%
+  );
+  border-radius: 50%;
+}
+
+/* Footer styling */
+.rm-letter-card__footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(180, 140, 100, 0.2);
+  text-align: center;
+}
+
+.rm-letter-card__from {
+  font-family: 'Crimson Text', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #5a4545;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.rm-letter-card__sign {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #4a3030;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * EMOTIONAL EMPHASIS EFFECTS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Shimmer animation for romantic sentences */
+@keyframes rm-letter-shimmer {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-5%);
+  }
+  40%, 60% {
+    opacity: 1;
+    transform: translateX(5%);
+  }
+}
+
+/* Ink bleed effect on emphasized text (using text-shadow) */
+.rm-letter-card__body p:nth-child(3),
+.rm-letter-card__body p:nth-child(4) {
+  text-shadow: 
+    0 0 1px rgba(50, 30, 30, 0.1),
+    0.5px 0.5px 0 rgba(60, 40, 40, 0.03);
+}
+
+/* Special emphasis for the most heartfelt paragraph */
+.rm-letter-card__body p:nth-child(4) {
+  position: relative;
+  padding: 0.75rem 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 230, 210, 0.25) 10%,
+    rgba(255, 230, 210, 0.3) 50%,
+    rgba(255, 230, 210, 0.25) 90%,
+    transparent 100%
+  );
+  border-radius: 4px;
+}
+
+/* Hand-drawn swirl decoration for select lines */
+.rm-letter-card__body p:nth-child(4)::before {
+  content: '~';
+  position: absolute;
+  left: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: rgba(180, 120, 120, 0.4);
+  pointer-events: none;
+}
+
+.rm-letter-card__body p:nth-child(4)::after {
+  content: '~';
+  position: absolute;
+  right: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%) scaleX(-1);
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: rgba(180, 120, 120, 0.4);
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * MAGICAL EFFECTS - PINK DUST PARTICLES
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Pink dust particles container */
+.rm-letter-card .rm-letter-dust {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+/* Individual dust particles - created via JS but styled here */
+.rm-letter-card .rm-letter-dust-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: radial-gradient(circle, rgba(255, 180, 200, 0.8) 0%, rgba(255, 150, 180, 0) 70%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: rm-letter-dust-drift 15s ease-in-out infinite;
+}
+
+/* Dust particle variations */
+.rm-letter-card .rm-letter-dust-particle:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.rm-letter-card .rm-letter-dust-particle:nth-child(2) {
+  left: 25%;
+  animation-delay: 3s;
+  animation-duration: 22s;
+}
+
+.rm-letter-card .rm-letter-dust-particle:nth-child(3) {
+  left: 40%;
+  animation-delay: 6s;
+  animation-duration: 16s;
+}
+
+.rm-letter-card .rm-letter-dust-particle:nth-child(4) {
+  left: 55%;
+  animation-delay: 2s;
+  animation-duration: 20s;
+}
+
+.rm-letter-card .rm-letter-dust-particle:nth-child(5) {
+  left: 70%;
+  animation-delay: 5s;
+  animation-duration: 19s;
+}
+
+.rm-letter-card .rm-letter-dust-particle:nth-child(6) {
+  left: 85%;
+  animation-delay: 8s;
+  animation-duration: 17s;
+}
+
+.rm-letter-card .rm-letter-dust-particle:nth-child(7) {
+  left: 15%;
+  animation-delay: 10s;
+  animation-duration: 21s;
+}
+
+.rm-letter-card .rm-letter-dust-particle:nth-child(8) {
+  left: 60%;
+  animation-delay: 4s;
+  animation-duration: 23s;
+}
+
+/* Dust drift animation */
+@keyframes rm-letter-dust-drift {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) translateX(0) scale(0.5);
+  }
+  10% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.4;
+    transform: translateY(40%) translateX(20px) scale(1);
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20%) translateX(-10px) scale(0.3);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * RESPONSIVE ADJUSTMENTS - SCOPED TO LETTER ONLY
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (min-width: 768px) {
+  .rm-letter-card__body {
+    font-size: 1.25rem;
+    line-height: 2.1;
+  }
+  
+  .rm-letter-card__title {
+    font-size: 1.8rem;
+  }
+  
+  .rm-letter-card__closing {
+    font-size: 1.5rem !important;
+  }
+  
+  .rm-letter-card__signature {
+    font-size: 1.7rem !important;
+  }
+  
+  .rm-letter-card::after {
+    font-size: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rm-letter-card {
+    /* Ensure no horizontal overflow on small screens */
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: var(--rm-space-5, 20px) var(--rm-space-4, 16px);
+    /* Simpler shadow on mobile for performance */
+    box-shadow: 
+      0 15px 40px rgba(60, 40, 30, 0.2),
+      0 6px 15px rgba(60, 40, 30, 0.12),
+      inset 0 0 50px rgba(180, 150, 120, 0.1);
+  }
+  
+  .rm-letter-card__body {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .rm-letter-card__title {
+    font-size: 1.35rem;
+  }
+  
+  .rm-letter-card__closing {
+    font-size: 1.25rem !important;
+  }
+  
+  .rm-letter-card::after {
+    font-size: 140px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * REDUCED MOTION - SCOPED TO LETTER ONLY
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .rm-letter-card::before {
+    animation: none;
+  }
+  
+  .rm-letter-card::after {
+    animation: none;
+  }
+  
+  .rm-letter-card__closing::before {
+    animation: none;
+    opacity: 0.5;
+  }
+  
+  .rm-letter-card .rm-letter-dust-particle {
+    animation: none;
+    display: none;
+  }
+}
+

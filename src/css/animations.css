@@ -1,0 +1,1088 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * ROMANTIC MOTION DESIGN SYSTEM - ANIMATIONS (V7 CINEMATIC POLISH)
+ * ═══════════════════════════════════════════════════════════════════════════
+ * All keyframe animations for the cinematic romantic mini-movie experience.
+ * Version 7.0 - Deeper 3D, Mini-Show Stage, Paper Reveal, Organic Bokeh
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V6: AMBIENT HEART FLOATING ANIMATIONS (DREAMIER)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-ambient-heart-float {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0) scale(0.5) rotate(0deg);
+  }
+  4% {
+    opacity: 0.18;
+  }
+  18% {
+    opacity: 0.15;
+    transform: translateY(-18vh) translateX(12px) scale(0.75) rotate(8deg);
+  }
+  38% {
+    opacity: 0.12;
+    transform: translateY(-38vh) translateX(-8px) scale(0.88) rotate(-4deg);
+  }
+  58% {
+    opacity: 0.09;
+    transform: translateY(-58vh) translateX(15px) scale(0.82) rotate(6deg);
+  }
+  78% {
+    opacity: 0.05;
+    transform: translateY(-78vh) translateX(-12px) scale(0.68) rotate(-2deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-108vh) translateX(0) scale(0.45) rotate(0deg);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V7: BOKEH DRIFT ANIMATIONS (MORE ORGANIC, IRREGULAR)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-bokeh-drift-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: var(--rm-bokeh-opacity);
+  }
+  12% {
+    transform: translate(18px, -25px) scale(1.04);
+    opacity: calc(var(--rm-bokeh-opacity) * 1.12);
+  }
+  28% {
+    transform: translate(42px, 8px) scale(0.97);
+    opacity: var(--rm-bokeh-opacity);
+  }
+  45% {
+    transform: translate(65px, -12px) scale(1.08);
+    opacity: calc(var(--rm-bokeh-opacity) * 0.92);
+  }
+  62% {
+    transform: translate(38px, 32px) scale(1.02);
+    opacity: calc(var(--rm-bokeh-opacity) * 1.05);
+  }
+  78% {
+    transform: translate(15px, 18px) scale(0.95);
+    opacity: var(--rm-bokeh-opacity);
+  }
+  92% {
+    transform: translate(5px, 5px) scale(1.01);
+    opacity: calc(var(--rm-bokeh-opacity) * 0.98);
+  }
+}
+
+@keyframes rm-bokeh-drift-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: var(--rm-bokeh-opacity);
+  }
+  15% {
+    transform: translate(-22px, 18px) scale(0.94);
+    opacity: calc(var(--rm-bokeh-opacity) * 0.88);
+  }
+  32% {
+    transform: translate(-48px, -15px) scale(1.06);
+    opacity: calc(var(--rm-bokeh-opacity) * 1.1);
+  }
+  50% {
+    transform: translate(-32px, -35px) scale(1.02);
+    opacity: var(--rm-bokeh-opacity);
+  }
+  68% {
+    transform: translate(-55px, 5px) scale(0.96);
+    opacity: calc(var(--rm-bokeh-opacity) * 0.95);
+  }
+  85% {
+    transform: translate(-18px, -8px) scale(1.03);
+    opacity: calc(var(--rm-bokeh-opacity) * 1.08);
+  }
+}
+
+@keyframes rm-bokeh-drift-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: var(--rm-bokeh-opacity);
+  }
+  18% {
+    transform: translate(28px, 15px) scale(1.05);
+    opacity: calc(var(--rm-bokeh-opacity) * 1.08);
+  }
+  35% {
+    transform: translate(12px, -28px) scale(0.92);
+    opacity: calc(var(--rm-bokeh-opacity) * 0.85);
+  }
+  52% {
+    transform: translate(-20px, -18px) scale(1.04);
+    opacity: var(--rm-bokeh-opacity);
+  }
+  70% {
+    transform: translate(-8px, 22px) scale(0.98);
+    opacity: calc(var(--rm-bokeh-opacity) * 1.05);
+  }
+  88% {
+    transform: translate(10px, 8px) scale(1.02);
+    opacity: calc(var(--rm-bokeh-opacity) * 0.95);
+  }
+}
+
+/* V7: Additional organic bokeh patterns */
+@keyframes rm-bokeh-drift-4 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: var(--rm-bokeh-opacity);
+  }
+  22% {
+    transform: translate(-15px, -32px) scale(1.08) rotate(5deg);
+    opacity: calc(var(--rm-bokeh-opacity) * 1.15);
+  }
+  45% {
+    transform: translate(25px, -15px) scale(0.94) rotate(-3deg);
+    opacity: calc(var(--rm-bokeh-opacity) * 0.9);
+  }
+  68% {
+    transform: translate(35px, 20px) scale(1.02) rotate(2deg);
+    opacity: var(--rm-bokeh-opacity);
+  }
+  88% {
+    transform: translate(8px, 10px) scale(0.98) rotate(-1deg);
+    opacity: calc(var(--rm-bokeh-opacity) * 1.05);
+  }
+}
+
+@keyframes rm-bokeh-drift-5 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: var(--rm-bokeh-opacity);
+  }
+  20% {
+    transform: translate(32px, -8px) scale(0.96);
+    opacity: calc(var(--rm-bokeh-opacity) * 0.92);
+  }
+  42% {
+    transform: translate(18px, 28px) scale(1.1);
+    opacity: calc(var(--rm-bokeh-opacity) * 1.12);
+  }
+  65% {
+    transform: translate(-12px, 15px) scale(1.02);
+    opacity: var(--rm-bokeh-opacity);
+  }
+  82% {
+    transform: translate(-25px, -10px) scale(0.95);
+    opacity: calc(var(--rm-bokeh-opacity) * 0.88);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V7: CINEMATIC 3D POLAROID FLY-IN ANIMATION (DEEPER & STRONGER)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-polaroid-fly-in-3d {
+  0% {
+    opacity: 0;
+    filter: blur(var(--rm-polaroid-fly-blur-start, 16px));
+    transform: 
+      perspective(var(--rm-perspective-gallery, 1700px))
+      scale(var(--rm-polaroid-fly-scale-start, 0.45))
+      translateY(var(--rm-polaroid-fly-translate-y-start, 180px))
+      translateZ(var(--rm-polaroid-fly-translate-z-start, -580px))
+      rotateX(var(--rm-polaroid-fly-rotate-x-start, 18deg))
+      rotate(var(--fly-rotate, 0deg));
+  }
+  35% {
+    opacity: 0.65;
+    filter: blur(8px);
+    transform: 
+      perspective(var(--rm-perspective-gallery, 1700px))
+      scale(0.82)
+      translateY(50px)
+      translateZ(-180px)
+      rotateX(8deg)
+      rotate(calc(var(--fly-rotate, 0deg) * 0.5));
+  }
+  60% {
+    opacity: 0.9;
+    filter: blur(3px);
+    transform: 
+      perspective(var(--rm-perspective-gallery, 1700px))
+      scale(0.98)
+      translateY(-5px)
+      translateZ(-30px)
+      rotateX(2deg)
+      rotate(calc(var(--fly-rotate, 0deg) * 0.25));
+  }
+  75% {
+    opacity: 0.98;
+    filter: blur(1px);
+    transform: 
+      perspective(var(--rm-perspective-gallery, 1700px))
+      scale(var(--rm-polaroid-fly-overshoot-scale, 1.055))
+      translateY(-10px)
+      translateZ(var(--rm-polaroid-fly-overshoot-z, 50px))
+      rotateX(-2deg)
+      rotate(calc(var(--fly-rotate, 0deg) * 0.1));
+  }
+  88% {
+    filter: blur(0.3px);
+    transform: 
+      perspective(var(--rm-perspective-gallery, 1700px))
+      scale(0.995)
+      translateY(3px)
+      translateZ(8px)
+      rotateX(0deg)
+      rotate(calc(var(--fly-rotate, 0deg) * 0.03));
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: 
+      perspective(var(--rm-perspective-gallery, 1700px))
+      scale(1)
+      translateY(0)
+      translateZ(0)
+      rotateX(0deg)
+      rotate(0deg);
+  }
+}
+
+/* V7: Gallery Post-Landing Float */
+@keyframes rm-float-random {
+  0% {
+    transform: 
+      perspective(var(--rm-perspective-gallery, 1700px))
+      translate3d(0, 0, 0)
+      rotateX(0) rotateY(0) rotate(0deg);
+  }
+  33% {
+    transform: 
+      perspective(var(--rm-perspective-gallery, 1700px))
+      translate3d(2px, -4px, 10px)
+      rotateX(1deg) rotateY(1deg) rotate(0.5deg);
+  }
+  66% {
+    transform: 
+      perspective(var(--rm-perspective-gallery, 1700px))
+      translate3d(-2px, 3px, -5px)
+      rotateX(-0.5deg) rotateY(-0.5deg) rotate(-0.5deg);
+  }
+  100% {
+    transform: 
+      perspective(var(--rm-perspective-gallery, 1700px))
+      translate3d(0, 0, 0)
+      rotateX(0) rotateY(0) rotate(0deg);
+  }
+}
+
+/* Simple fly-in for mobile (less 3D) */
+@keyframes rm-polaroid-fly-in-simple {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.6) translateY(80px) rotate(var(--fly-rotate, 0deg));
+  }
+  50% {
+    filter: blur(3px);
+    transform: scale(1.04) translateY(-8px) rotate(calc(var(--fly-rotate, 0deg) * 0.3));
+  }
+  75% {
+    filter: blur(0.5px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1) translateY(0) rotate(0deg);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V7: ANIMAL SOLO ANIMATIONS (ENHANCED MINI-SHOW)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-animal-solo-enter {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) translateY(70px) rotate(-10deg);
+    filter: blur(3px);
+  }
+  45% {
+    filter: blur(0);
+    transform: scale(1.12) translateY(-15px) rotate(3deg);
+  }
+  70% {
+    transform: scale(0.96) translateY(5px) rotate(-1.5deg);
+  }
+  85% {
+    transform: scale(1.02) translateY(-2px) rotate(0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes rm-animal-solo-exit {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-60px) rotate(10deg);
+    filter: blur(2px);
+  }
+}
+
+/* V7: Primary (Hamster) - Grand Star Entrance */
+@keyframes rm-animal-solo-enter-primary {
+  0% {
+    opacity: 0;
+    filter: blur(6px);
+    transform: scale(0.25) translateY(120px) rotate(-18deg);
+  }
+  25% {
+    opacity: 0.5;
+    filter: blur(3px);
+    transform: scale(1.25) translateY(-25px) rotate(8deg);
+  }
+  45% {
+    filter: blur(1px);
+    transform: scale(0.92) translateY(12px) rotate(-4deg);
+  }
+  65% {
+    filter: blur(0);
+    transform: scale(1.1) translateY(-8px) rotate(2deg);
+  }
+  82% {
+    transform: scale(0.98) translateY(3px) rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1) translateY(0) rotate(0deg);
+  }
+}
+
+/* V7: Animal bubble appear with subtle bounce */
+@keyframes rm-animal-bubble-appear {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5) translateY(15px);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.08) translateY(-4px);
+  }
+  75% {
+    transform: translateX(-50%) scale(0.98) translateY(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1) translateY(0);
+  }
+}
+
+/* V7: Bubble subtle wiggle for personality */
+@keyframes rm-bubble-idle-wiggle {
+  0%, 100% {
+    transform: translateX(-50%) rotate(-0.5deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(0.5deg);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V7: SCENE-SPECIFIC ENTRANCE ANIMATIONS (CINEMATIC)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* V7: Hero Scene - Dramatic cinematic opening shot */
+@keyframes rm-scene-enter-hero {
+  0% {
+    opacity: 0;
+    filter: blur(16px); /* Increased blur overshoot */
+    transform: scale(0.86) translateY(35px);
+  }
+  40% {
+    filter: blur(6px);
+    transform: scale(0.94) translateY(12px);
+  }
+  70% {
+    filter: blur(2px);
+    transform: scale(0.99) translateY(-3px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Deep Scene - Slow, minimal, intimate */
+@keyframes rm-scene-enter-deep {
+  0% {
+    opacity: 0;
+    transform: scale(0.98) translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Animals Scene - Playful bounce overshoot */
+@keyframes rm-scene-enter-animals {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+  60% {
+    transform: scale(1.02) translateY(-8px);
+  }
+  80% {
+    transform: scale(0.99) translateY(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* V7: Letter Scene - True 3D Paper Reveal */
+@keyframes rm-scene-enter-letter {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: perspective(1200px) scale(0.92) translateY(30px) rotateX(12deg);
+  }
+  45% {
+    filter: blur(2px);
+    transform: perspective(1200px) scale(0.99) translateY(-5px) rotateX(-2deg);
+  }
+  75% {
+    filter: blur(0);
+    transform: perspective(1200px) scale(1.01) translateY(2px) rotateX(0deg);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: perspective(1200px) scale(1) translateY(0) rotateX(0deg);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V7: LETTER CARD & ENVELOPE RITUAL
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-letter-shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(300%) skewX(-15deg);
+  }
+}
+
+/* V7: Envelope Open - 3D Flap */
+@keyframes rm-envelope-flap-open {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 5;
+  }
+  100% {
+    transform: rotateX(180deg);
+    z-index: 1;
+  }
+}
+
+/* V7: Letter Slide Out of Envelope */
+@keyframes rm-letter-slide-out {
+  0% {
+    transform: translateY(100px) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V7: BUTTON MORPH & CURSOR ANIMATIONS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-btn-attention-pulse {
+  0%, 100% {
+    box-shadow: var(--rm-shadow-button), 0 0 0 0 rgba(255, 172, 200, 0.35);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: var(--rm-shadow-button), 0 0 25px 8px rgba(255, 172, 200, 0.18);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes rm-btn-text-pulse {
+  0%, 100% {
+    opacity: 1;
+    letter-spacing: normal;
+  }
+  50% {
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+  }
+}
+
+@keyframes rm-cursor-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.3;
+  }
+}
+
+@keyframes rm-pulse-heartbeat {
+  0% { transform: scale(1); }
+  15% { transform: scale(1.05); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.05); }
+  60% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * FLOATING ANIMATIONS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-float-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes rm-float-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-6px) scale(1.01);
+  }
+  50% {
+    transform: translateY(-10px) scale(1);
+  }
+  75% {
+    transform: translateY(-4px) scale(1.005);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * SHIMMER & GLOW EFFECTS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes rm-label-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 172, 200, 0.22);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 172, 200, 0.42);
+  }
+}
+
+@keyframes rm-gift-shimmer {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * MUSIC BUTTON
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-music-pulse {
+  0%, 100% {
+    box-shadow: var(--rm-shadow-md), 0 0 0 0 rgba(255, 172, 200, 0.42);
+  }
+  50% {
+    box-shadow: var(--rm-shadow-md), 0 0 0 12px rgba(255, 172, 200, 0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * HEART ANIMATIONS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.15);
+  }
+  20% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rm-heart-float-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) translateX(0) rotate(0deg);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(10vh) translateX(var(--drift, 20px)) rotate(20deg);
+  }
+  30% {
+    transform: translateY(25vh) translateX(calc(var(--drift, 20px) * -0.6)) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(45vh) translateX(var(--drift, 20px)) rotate(15deg);
+  }
+  70% {
+    opacity: 0.7;
+    transform: translateY(65vh) translateX(calc(var(--drift, 20px) * -0.8)) rotate(-5deg);
+  }
+  85% {
+    opacity: 0.4;
+    transform: translateY(80vh) translateX(var(--drift, 20px)) rotate(10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * DEEP CARD BREATHING
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-breathing-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+    background-size: 200% 200%;
+  }
+  50% {
+    background-position: 100% 50%;
+    background-size: 220% 220%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * CLOSING SECTION
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-closing-title-glow {
+  0% {
+    text-shadow: none;
+  }
+  100% {
+    text-shadow: 
+      0 0 20px rgba(255, 172, 200, 0.42),
+      0 0 40px rgba(255, 172, 200, 0.22);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * REVEAL ANIMATIONS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rm-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rm-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * LIGHTBOX ANIMATIONS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-lightbox-zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(30px);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * TOAST ANIMATION
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * SPECIAL EFFECTS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-special-glow {
+  0%, 100% {
+    box-shadow: 
+      var(--rm-shadow-lg),
+      0 0 20px rgba(255, 172, 200, 0.32),
+      0 0 40px rgba(255, 172, 200, 0.22);
+  }
+  50% {
+    box-shadow: 
+      var(--rm-shadow-lg),
+      0 0 30px rgba(255, 172, 200, 0.52),
+      0 0 60px rgba(255, 172, 200, 0.32),
+      0 0 80px rgba(212, 180, 255, 0.22);
+  }
+}
+
+/* Mini heart burst from element */
+@keyframes rm-mini-heart-burst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0) translateX(var(--burst-x, 0)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(var(--burst-y, -50px)) translateX(var(--burst-x, 0)) scale(0.5);
+  }
+}
+
+/* V7: Fountain heart animation (floating up) */
+@keyframes rm-heart-fountain {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) translateY(0) translateX(0) scale(0.5);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-50%, 0) translateY(-20px) translateX(var(--burst-x, 0)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 0) translateY(var(--burst-y, -150px)) translateX(var(--burst-x, 0)) scale(0.8) rotate(var(--burst-x, 10deg));
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V7: PHOTO STACK CASCADE (LOVE SCENE - WIRED & ENHANCED)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-photo-cascade-back {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px) rotate(-15deg) scale(0.8);
+    filter: blur(3px);
+  }
+  55% {
+    filter: blur(0);
+    transform: translateX(12px) rotate(-3deg) scale(1.03);
+  }
+  75% {
+    transform: translateX(-3px) rotate(-7deg) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(-6deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes rm-photo-cascade-front {
+  0% {
+    opacity: 0;
+    transform: translateX(80px) rotate(15deg) scale(0.8);
+    filter: blur(3px);
+  }
+  55% {
+    filter: blur(0);
+    transform: translateX(-12px) rotate(2deg) scale(1.03);
+  }
+  75% {
+    transform: translateX(3px) rotate(6deg) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(5deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * BUBBLE WIGGLE
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-bubble-wiggle {
+  0%, 100% {
+    transform: translateX(-50%) scale(1) rotate(-1deg);
+  }
+  25% {
+    transform: translateX(-50%) scale(1.02) rotate(1deg);
+  }
+  50% {
+    transform: translateX(-50%) scale(1) rotate(-1deg);
+  }
+  75% {
+    transform: translateX(-50%) scale(1.01) rotate(1deg);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * BUTTON RIPPLE
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-btn-ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V6: ANIMALS COMPLETE CELEBRATION
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-animals-complete-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  60% {
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * V7: STAGE SPOTLIGHT PULSE (SUBTLE)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes rm-spotlight-pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * REDUCED MOTION OVERRIDES (V7 - ALL NEW ANIMATIONS INCLUDED)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.2s !important;
+  }
+  
+  .rm-ambient-heart {
+    display: none;
+  }
+  
+  .rm-bokeh-dot {
+    animation: none !important;
+  }
+  
+  /* V7: Fly items - instant visible, no 3D transforms */
+  .rm-fly-item {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  
+  .rm-fly-item.is-flying {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  
+  .rm-fly-item.is-floating {
+    animation: none !important;
+  }
+  
+  /* V7: Photo stack cascade - instant */
+  .rm-photo-stack__item--back.is-visible,
+  .rm-photo-stack__item--front.is-visible {
+    animation: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+  
+  .rm-photo-stack__item--back.is-visible {
+    transform: rotate(-6deg) !important;
+  }
+  
+  .rm-photo-stack__item--front.is-visible {
+    transform: rotate(5deg) !important;
+  }
+  
+  /* V6: Button attention pulse */
+  .rm-btn--continue.is-visible {
+    animation: none !important;
+  }
+  
+  .rm-scene-next.is-visible {
+    animation: none !important;
+  }
+  
+  .rm-hero-label.is-visible {
+    animation: none !important;
+  }
+  
+  /* V7: Animal solo animations - instant */
+  .rm-animal-solo {
+    animation: none !important;
+  }
+  
+  .rm-animal-solo.is-entering {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  
+  .rm-animal-solo.is-exiting {
+    opacity: 0;
+    transform: none;
+  }
+  
+  .rm-animal-solo--primary.is-entering {
+    animation: none !important;
+  }
+  
+  .rm-animal-card--primary.is-visible {
+    animation: none !important;
+  }
+  
+  /* V7: Scene entrance animations - no transform/blur */
+  .rm-scene--hero.is-entering.is-active,
+  .rm-scene--deep.is-entering.is-active,
+  .rm-scene--animals.is-entering.is-active,
+  .rm-scene--letter.is-entering.is-active {
+    animation: none !important;
+    filter: none !important;
+    transform: none !important;
+  }
+  
+  /* V7: Letter shimmer - hidden */
+  .rm-letter-card::after {
+    display: none !important;
+  }
+  
+  .rm-letter-card.has-shimmer::after {
+    display: none !important;
+  }
+  
+  /* V7: Letter entrance - instant */
+  .rm-letter-card.rm-scene-element.is-visible {
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  
+  /* Deep card breathing */
+  .rm-deep-card::before {
+    animation: none !important;
+  }
+  
+  .rm-highlight-eyes {
+    animation: none !important;
+  }
+  
+  .rm-closing__title.is-visible {
+    animation: none !important;
+  }
+  
+  .rm-closing__heart {
+    animation: none !important;
+  }
+  
+  .rm-gift-item.is-visible .rm-gift-item__icon {
+    animation: none !important;
+  }
+  
+  /* V7: Bubble wiggle - none */
+  .rm-animal-solo__bubble {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  /* V7: Spotlight pulse - none */
+  .rm-animals-stage::before {
+    animation: none !important;
+  }
+}

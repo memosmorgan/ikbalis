@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no, maximum-scale=1.0">
+  <meta name="description" content="İkbal'in doğum günü için özel bir sürpriz - V7 Cinematic Polish">
+  <meta name="theme-color" content="#1e1428">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <title>Tatlışımın Doğum Günü 💕</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="src/css/tokens.css">
+  <link rel="stylesheet" href="src/css/utilities.css">
+  <link rel="stylesheet" href="src/css/layout.css">
+  <link rel="stylesheet" href="src/css/components.css">
+  <link rel="stylesheet" href="src/css/animations.css">
+  <link rel="stylesheet" href="src/css/v8-upgrades.css">
+  <link rel="stylesheet" href="src/css/letter-romantic.css">
+  <link rel="stylesheet" href="src/css/mobile-safari.css">
+</head>
+<body>
+  <!-- V8: Cinematic Curtain Raiser (Pre-loader) -->
+  <div id="rm-curtain" class="rm-curtain">
+    <div class="rm-curtain__content">
+      <div class="rm-curtain__heart">💗</div>
+      <div class="rm-curtain__text">Güzellik için hazırlanıyor...</div>
+      <div class="rm-curtain__hint">Hazırlansan mı ne 🎧</div>
+      <button id="rm-curtain-start" class="rm-curtain__btn">Dokun</button>
+    </div>
+  </div>
+
+  <!-- Audio Element (Harvey) -->
+  <audio id="rm-music" preload="auto" loop>
+    <source src="public/audio/harvey.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Main Shell -->
+  <div class="rm-shell">
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         AMBIENT BACKGROUND LAYERS (V6 CINEMATIC)
+         ═══════════════════════════════════════════════════════════════════════ -->
+    
+    <!-- Bokeh Layer -->
+    <div class="rm-bokeh-layer" aria-hidden="true">
+      <div class="rm-bokeh-dot rm-bokeh-dot--pink rm-bokeh-dot--lg rm-bokeh-dot--1"></div>
+      <div class="rm-bokeh-dot rm-bokeh-dot--lilac rm-bokeh-dot--md rm-bokeh-dot--2"></div>
+      <div class="rm-bokeh-dot rm-bokeh-dot--pink rm-bokeh-dot--sm rm-bokeh-dot--3"></div>
+      <div class="rm-bokeh-dot rm-bokeh-dot--gold rm-bokeh-dot--md rm-bokeh-dot--4"></div>
+      <div class="rm-bokeh-dot rm-bokeh-dot--lilac rm-bokeh-dot--lg rm-bokeh-dot--5"></div>
+      <div class="rm-bokeh-dot rm-bokeh-dot--pink rm-bokeh-dot--sm rm-bokeh-dot--6"></div>
+      <div class="rm-bokeh-dot rm-bokeh-dot--gold rm-bokeh-dot--sm rm-bokeh-dot--7"></div>
+      <div class="rm-bokeh-dot rm-bokeh-dot--lilac rm-bokeh-dot--xl rm-bokeh-dot--8"></div>
+      <div class="rm-bokeh-dot rm-bokeh-dot--pink rm-bokeh-dot--md rm-bokeh-dot--9"></div>
+      <div class="rm-bokeh-dot rm-bokeh-dot--blush rm-bokeh-dot--lg rm-bokeh-dot--10"></div>
+    </div>
+
+    <!-- V6: Ambient Hearts Layer (10 hearts for dreamier effect) -->
+    <div class="rm-ambient-hearts" aria-hidden="true">
+      <span class="rm-ambient-heart" style="--ah-x: 8%; --ah-delay: 0s; --ah-duration: 20s;">💕</span>
+      <span class="rm-ambient-heart" style="--ah-x: 18%; --ah-delay: 5s; --ah-duration: 24s;">🩷</span>
+      <span class="rm-ambient-heart" style="--ah-x: 32%; --ah-delay: 2s; --ah-duration: 22s;">💗</span>
+      <span class="rm-ambient-heart" style="--ah-x: 45%; --ah-delay: 8s; --ah-duration: 26s;">💖</span>
+      <span class="rm-ambient-heart" style="--ah-x: 55%; --ah-delay: 3s; --ah-duration: 21s;">💕</span>
+      <span class="rm-ambient-heart" style="--ah-x: 68%; --ah-delay: 6s; --ah-duration: 25s;">🩷</span>
+      <span class="rm-ambient-heart" style="--ah-x: 78%; --ah-delay: 1s; --ah-duration: 23s;">💗</span>
+      <span class="rm-ambient-heart" style="--ah-x: 88%; --ah-delay: 9s; --ah-duration: 28s;">💖</span>
+      <span class="rm-ambient-heart" style="--ah-x: 25%; --ah-delay: 12s; --ah-duration: 27s;">💕</span>
+      <span class="rm-ambient-heart" style="--ah-x: 72%; --ah-delay: 15s; --ah-duration: 24s;">🩷</span>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SCENE CONTAINER (V7 CINEMATIC NAVIGATION)
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <div class="rm-scene-shell">
+
+      <!-- ═════════════════════════════════════════════════════════════════════
+           SCENE 1: HERO / INTRO
+           ═════════════════════════════════════════════════════════════════════ -->
+      <section class="rm-scene rm-scene--hero is-active" data-scene="hero" data-scene-index="0">
+        <div class="rm-scene__vignette"></div>
+        <div class="rm-scene__glow"></div>
+        
+        <div class="rm-scene__content">
+          <!-- Hero Card -->
+          <div class="rm-hero-card">
+            <!-- Date Label -->
+            <span class="rm-hero-label rm-scene-element" data-delay="400">
+              12 Aralık • İyi ki doğmuşsun 💗
+            </span>
+            
+            <!-- Main Title -->
+            <h1 class="rm-hero-title rm-scene-element" data-delay="700">
+              Bugün dünyanın en özel günü, çünkü doğum günün.
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="rm-hero-text rm-scene-element" data-delay="1000">
+              Ufak bi sürprizim var.
+            </p>
+            
+            <!-- Script Subtitle -->
+            <p class="rm-hero-subtitle rm-scene-element" data-delay="1300">
+              Başlayalım mı? 💕
+            </p>
+          </div>
+
+          <!-- Continue Button -->
+          <div class="rm-scene__nav">
+            <span class="rm-scene__waiting rm-scene-element" data-delay="1600">Devam etmek için biraz bekle...</span>
+            <button class="rm-scene-next rm-btn rm-btn--continue rm-btn--text-morph rm-scene-element" data-delay="2500" data-target="love">
+              Hadi bakalım 💕 <span class="rm-btn__arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═════════════════════════════════════════════════════════════════════
+           SCENE 2: LOVE / "BENİ MUTLU EDEN SENSİN"
+           ═════════════════════════════════════════════════════════════════════ -->
+      <section class="rm-scene rm-scene--love" data-scene="love" data-scene-index="1">
+        <div class="rm-scene__vignette"></div>
+        
+        <div class="rm-scene__content">
+          <div class="rm-split-layout">
+            <!-- Text Content -->
+            <div class="rm-split-layout__content">
+              <div class="rm-content-card rm-scene-element" data-delay="200">
+                <span class="rm-content-card__label">İkbaliş günü 💫</span>
+                <h2 class="rm-content-card__title">
+                  Her günümü güzelleştiren sensin.
+                </h2>
+                <div class="rm-content-card__text">
+                  <p>Bugün de ben seni güzelleştirmek istedim.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- V7: Photo Stack with Cascade Animation -->
+            <div class="rm-split-layout__media">
+              <div class="rm-photo-stack">
+                <figure class="rm-photo-stack__item rm-photo-stack__item--back rm-scene-element" data-delay="500">
+                  <img 
+                    src="public/images/gallery/photo-1.jpg" 
+                    alt="İkbal ile güzel bir anımız" 
+                    class="rm-photo-stack__img"
+                    loading="lazy"
+                    onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 400%22><rect fill=%22%231a1030%22 width=%22300%22 height=%22400%22/><text x=%22150%22 y=%22200%22 fill=%22%23ffacc8%22 text-anchor=%22middle%22 font-size=%2248%22>💕</text></svg>'"
+                  >
+                </figure>
+                <figure class="rm-photo-stack__item rm-photo-stack__item--front rm-scene-element" data-delay="700">
+                  <img 
+                    src="public/images/gallery/photo-2.jpg" 
+                    alt="En tatlı gülümsemen" 
+                    class="rm-photo-stack__img"
+                    loading="lazy"
+                    onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 400%22><rect fill=%22%23291040%22 width=%22300%22 height=%22400%22/><text x=%22150%22 y=%22200%22 fill=%22%23d4b4ff%22 text-anchor=%22middle%22 font-size=%2248%22>🩷</text></svg>'"
+                  >
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <!-- Continue Button -->
+          <div class="rm-scene__nav">
+            <button class="rm-scene-next rm-btn rm-btn--continue rm-btn--text-morph rm-scene-element" data-delay="1200" data-target="gallery">
+              Hızlıca Bak 📸 <span class="rm-btn__arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═════════════════════════════════════════════════════════════════════
+           SCENE 3: GALLERY (V7 - 12 POLAROIDS WITH DEEPER 3D FLY-IN)
+           ═════════════════════════════════════════════════════════════════════ -->
+      <section class="rm-scene rm-scene--gallery" data-scene="gallery" data-scene-index="2">
+        <div class="rm-scene__vignette rm-scene__vignette--focused"></div>
+        
+        <div class="rm-scene__content rm-scene__content--gallery">
+          <!-- Section Intro -->
+          <div class="rm-section-intro rm-scene-element" data-delay="200">
+            <span class="rm-section-intro__label">Hep ayrı bi güzelsin 🎀</span>
+            <h2 class="rm-section-intro__title">
+              Her fotoğrafında ayrı bi güzelsin bak, tekrar mı aşık oldum ne? 💘
+            </h2>
+          </div>
+
+          <!-- V7: Polaroid Gallery with deeper fly-in and wider stagger (230ms apart) -->
+          <div class="rm-gallery rm-gallery--fly-in">
+            <!-- Polaroid 1 -->
+            <figure class="rm-polaroid rm-polaroid--tilt-left rm-fly-item" data-fly-delay="400">
+              <div class="rm-polaroid__inner">
+                <img 
+                  src="public/images/gallery/photo-3.jpg" 
+                  alt="Güzel bir an" 
+                  class="rm-polaroid__img"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22><rect fill=%22%231a1030%22 width=%22300%22 height=%22300%22/><text x=%22150%22 y=%22150%22 fill=%22%23ffacc8%22 text-anchor=%22middle%22 font-size=%2240%22>💕</text></svg>'"
+                >
+              </div>
+              <figcaption class="rm-polaroid__caption">Güneşim gibisin... ☀️</figcaption>
+            </figure>
+
+            <!-- Polaroid 2 -->
+            <figure class="rm-polaroid rm-polaroid--tilt-right rm-fly-item" data-fly-delay="550">
+              <div class="rm-polaroid__inner">
+                <img 
+                  src="public/images/gallery/photo-4.jpg" 
+                  alt="Mutlu anlarımız" 
+                  class="rm-polaroid__img"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22><rect fill=%22%23291040%22 width=%22300%22 height=%22300%22/><text x=%22150%22 y=%22150%22 fill=%22%23d4b4ff%22 text-anchor=%22middle%22 font-size=%2240%22>🩷</text></svg>'"
+                >
+              </div>
+              <figcaption class="rm-polaroid__caption">Minnoşumsun... 🥰</figcaption>
+            </figure>
+
+            <!-- Polaroid 3 -->
+            <figure class="rm-polaroid rm-fly-item" data-fly-delay="700">
+              <div class="rm-polaroid__inner">
+                <img 
+                  src="public/images/gallery/photo-5.jpg" 
+                  alt="Seninle her an güzel" 
+                  class="rm-polaroid__img"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22><rect fill=%22%23150d28%22 width=%22300%22 height=%22300%22/><text x=%22150%22 y=%22150%22 fill=%22%23ffe4b5%22 text-anchor=%22middle%22 font-size=%2240%22>✨</text></svg>'"
+                >
+              </div>
+              <figcaption class="rm-polaroid__caption">En güzel çiçek sensin</figcaption>
+            </figure>
+
+            <!-- Polaroid 4 -->
+            <figure class="rm-polaroid rm-polaroid--tilt-left rm-fly-item" data-fly-delay="850">
+              <div class="rm-polaroid__inner">
+                <img 
+                  src="public/images/gallery/photo-6.jpg" 
+                  alt="En güzel hatıralar" 
+                  class="rm-polaroid__img"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22><rect fill=%22%231a1030%22 width=%22300%22 height=%22300%22/><text x=%22150%22 y=%22150%22 fill=%22%23ffacc8%22 text-anchor=%22middle%22 font-size=%2240%22>💖</text></svg>'"
+                >
+              </div>
+              <figcaption class="rm-polaroid__caption">Kalbimdesin 💖</figcaption>
+            </figure>
+
+            <!-- Polaroid 5 -->
+            <figure class="rm-polaroid rm-polaroid--tilt-right rm-fly-item" data-fly-delay="1000">
+              <div class="rm-polaroid__inner">
+                <img 
+                  src="public/images/gallery/photo-7.jpg" 
+                  alt="Gülümsemen her şeye değer" 
+                  class="rm-polaroid__img"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22><rect fill=%22%23291040%22 width=%22300%22 height=%22300%22/><text x=%22150%22 y=%22150%22 fill=%22%23d4b4ff%22 text-anchor=%22middle%22 font-size=%2240%22>💜</text></svg>'"
+                >
+              </div>
+              <figcaption class="rm-polaroid__caption">En tatlısın 💜</figcaption>
+            </figure>
+
+            <!-- Polaroid 6 -->
+            <figure class="rm-polaroid rm-fly-item" data-fly-delay="1150">
+              <div class="rm-polaroid__inner">
+                <img 
+                  src="public/images/gallery/photo-8.jpg" 
+                  alt="Birlikte güzel" 
+                  class="rm-polaroid__img"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22><rect fill=%22%23150d28%22 width=%22300%22 height=%22300%22/><text x=%22150%22 y=%22150%22 fill=%22%23ffe4b5%22 text-anchor=%22middle%22 font-size=%2240%22>🌟</text></svg>'"
+                >
+              </div>
+              <figcaption class="rm-polaroid__caption">Işığımsın 🌟</figcaption>
+            </figure>
+
+            <!-- Polaroid 7 -->
+            <figure class="rm-polaroid rm-polaroid--tilt-left rm-fly-item" data-fly-delay="1300">
+              <div class="rm-polaroid__inner">
+                <img 
+                  src="public/images/gallery/photo-9.jpg" 
+                  alt="Güzel anlarımız" 
+                  class="rm-polaroid__img"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22><rect fill=%22%231a1030%22 width=%22300%22 height=%22300%22/><text x=%22150%22 y=%22150%22 fill=%22%23ffacc8%22 text-anchor=%22middle%22 font-size=%2240%22>💓</text></svg>'"
+                >
+              </div>
+              <figcaption class="rm-polaroid__caption">Hayatımsın 💓</figcaption>
+            </figure>
+
+            <!-- Polaroid 8 -->
+            <figure class="rm-polaroid rm-polaroid--tilt-right rm-fly-item" data-fly-delay="1450" id="rm-infinity-photo">
+              <div class="rm-polaroid__inner">
+                <img 
+                  src="public/images/gallery/photo-10.jpg" 
+                  alt="Sevgiyle dolu" 
+                  class="rm-polaroid__img"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22><rect fill=%22%23291040%22 width=%22300%22 height=%22300%22/><text x=%22150%22 y=%22150%22 fill=%22%23d4b4ff%22 text-anchor=%22middle%22 font-size=%2240%22>💕</text></svg>'"
+                >
+              </div>
+              <figcaption class="rm-polaroid__caption">Erzinlimsin 💕</figcaption>
+            </figure>
+          </div>
+
+          <!-- Continue Button -->
+          <div class="rm-scene__nav rm-scene__nav--gallery">
+            <button class="rm-scene-next rm-btn rm-btn--continue rm-btn--text-morph rm-scene-element" data-delay="2100" data-target="deep">
+              Kalbimin Sahibi 💌 <span class="rm-btn__arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═════════════════════════════════════════════════════════════════════
+           SCENE 4: DEEP FEELINGS
+           ═════════════════════════════════════════════════════════════════════ -->
+      <section class="rm-scene rm-scene--deep" data-scene="deep" data-scene-index="3">
+        <div class="rm-scene__vignette"></div>
+        
+        <div class="rm-scene__content">
+          <div class="rm-deep-card rm-scene-element" data-delay="200">
+            <span class="rm-deep-card__label rm-scene-element" data-delay="400">Her geçen gün biraz daha 💌</span>
+            
+            <h2 class="rm-deep-card__heading rm-scene-element" data-delay="600">
+              Seni tanıdıkça daha da kapılıyorum sana
+            </h2>
+            
+          <div class="rm-deep-card__text">
+            <p class="rm-scene-element" data-delay="900">
+              Her halinle hoşuma gidiyorsun.
+            </p>
+            <p class="rm-scene-element" data-delay="1200" data-no-poetic="true">
+              O güzel <span id="trigger-eyes-egg" class="rm-highlight-eyes" role="button" tabindex="0" aria-label="Gözler etkileşimi">gözlerini</span> görmek bile günümü güzelleştirmeye yetiyor.
+            </p>
+            <p class="rm-scene-element" data-delay="1500">
+              Bunu bilmeni ve kalbinde hissetmeni istedim...
+            </p>
+              
+              <!-- V7: Hold to Feel Button -->
+              <div class="rm-hold-container rm-scene-element" data-delay="1800">
+                <button class="rm-btn rm-btn--hold" id="rm-hold-btn">
+                  <span class="rm-btn__icon">💓</span> Beni hisset 
+                </button>
+              </div>
+              
+              <!-- Idle Whisper Container -->
+              <div class="rm-idle-whisper" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Continue Button -->
+          <div class="rm-scene__nav">
+            <button id="btn-deep-next" class="rm-scene-next rm-btn rm-btn--continue rm-btn--text-morph rm-scene-element" data-delay="2400" data-target="animals">
+              Evişko🏡 <span class="rm-btn__arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═════════════════════════════════════════════════════════════════════
+           SCENE 5: ANIMALS / EVİMİZ (V7 MINI-SHOW)
+           ═════════════════════════════════════════════════════════════════════ -->
+      <section class="rm-scene rm-scene--animals" data-scene="animals" data-scene-index="4">
+        <div class="rm-scene__vignette"></div>
+        
+        <div class="rm-scene__content">
+          <!-- Header -->
+          <div class="rm-animals-header rm-scene-element" data-delay="200">
+            <span class="rm-animals-header__label">Evimiz ve minnoş sakinleri 🏡</span>
+            <h2 class="rm-animals-header__title">
+              Seni hayvanişkolalarla tanıştırayım...
+            </h2>
+            <p class="rm-animals-header__text">
+              Hepsi evimizde olmayı bekliyor. Tanış!
+            </p>
+          </div>
+
+          <!-- V7: Animals Timeline Stage will be injected here by JS -->
+
+          <!-- Fallback Static Grid (hidden when timeline is active) -->
+          <div class="rm-animals-grid" style="display: none;">
+            <!-- Cat Card -->
+            <article class="rm-animal-card rm-scene-element" data-delay="500" data-animal="cat">
+              <span class="rm-animal-bubble">Evin patronu benim artık 😼</span>
+              <span class="rm-animal-card__emoji">🐱</span>
+              <h3 class="rm-animal-card__name">Kedoş</h3>
+              <p class="rm-animal-card__text">Kucağında mırıldayacak</p>
+            </article>
+
+            <!-- Dog Card -->
+            <article class="rm-animal-card rm-scene-element" data-delay="650" data-animal="dog">
+              <span class="rm-animal-bubble">Her gün seni kapıda karşılayacağım! 🐕</span>
+              <span class="rm-animal-card__emoji">🐶</span>
+              <h3 class="rm-animal-card__name">Köpüşko</h3>
+              <p class="rm-animal-card__text">Her sabah bizi uyandıracak</p>
+            </article>
+
+            <!-- Hamster Card (Primary) -->
+            <article class="rm-animal-card rm-animal-card--primary rm-scene-element" data-delay="800" data-animal="hamster">
+              <span class="rm-animal-bubble">Ben ilk geleniyim! 🐹✨</span>
+              <span class="rm-animal-card__emoji">🐹</span>
+              <h3 class="rm-animal-card__name">Hamster</h3>
+              <p class="rm-animal-card__text">İlk minik arkadaşımız</p>
+            </article>
+
+            <!-- Bunny Card -->
+            <article class="rm-animal-card rm-scene-element" data-delay="950" data-animal="bunny">
+              <span class="rm-animal-bubble">Senin kadar yumuşak değilim ama fena da değilim 🐰</span>
+              <span class="rm-animal-card__emoji">🐰</span>
+              <h3 class="rm-animal-card__name">Tavşanoş</h3>
+              <p class="rm-animal-card__text">Senin kadar tatlı</p>
+            </article>
+          </div>
+
+          <!-- Footer Text -->
+          <div class="rm-animals-footer rm-scene-element" data-delay="1200">
+            <p class="rm-animals-footer__text">
+              Hepsi bizimle olacak. Sen evde, ben de yanındayken! 💕
+            </p>
+          </div>
+
+          <!-- V7: Continue Button - only appears after rmui:animals-complete event -->
+          <div class="rm-scene__nav">
+            <button class="rm-scene-next rm-btn rm-btn--continue rm-btn--text-morph rm-scene-element" data-target="closing">
+              Sana Son Bir Şey... 📝 <span class="rm-btn__arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═════════════════════════════════════════════════════════════════════
+           SCENE 6: CLOSING
+           ═════════════════════════════════════════════════════════════════════ -->
+      <section class="rm-scene rm-scene--closing" data-scene="closing" data-scene-index="5">
+        <div class="rm-scene__vignette rm-scene__vignette--warm"></div>
+        
+        <div class="rm-scene__content">
+          <div class="rm-closing">
+            <!-- Main Message -->
+            <h2 class="rm-closing__title rm-scene-element" data-delay="300">
+              İyi ki doğmuşsun İkbal, iyi ki de hayatıma girmişsin.
+            </h2>
+            
+            <p class="rm-closing__text rm-scene-element" data-delay="700">
+              Asıl hediyeyi vereceğim an bile beni heyecanlandırıyor.
+            </p>
+            
+            <p class="rm-closing__text rm-scene-element" data-delay="1100">
+              Mutlu yıllar, tatlışım <span class="rm-closing__heart">🩷</span>
+            </p>
+
+            <!-- Heartburst Button -->
+            <button class="rm-btn rm-btn--heartburst rm-scene-element" data-delay="1900" type="button">
+              Tekrar kalp yağsın 💗
+            </button>
+          </div>
+
+          <!-- Continue Button -->
+          <div class="rm-scene__nav">
+            <button class="rm-scene-next rm-btn rm-btn--continue rm-btn--special rm-btn--text-morph rm-scene-element" data-delay="2300" data-target="letter">
+              Mektubunu Aç ✉️ <span class="rm-btn__arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═════════════════════════════════════════════════════════════════════
+           SCENE 7: FINAL LETTER (V7 TRUE PAPER REVEAL)
+           ═════════════════════════════════════════════════════════════════════ -->
+      <section class="rm-scene rm-scene--letter" data-scene="letter" data-scene-index="6">
+        <div class="rm-scene__vignette rm-scene__vignette--soft"></div>
+        
+        <!-- V7: Envelope Wrapper -->
+        <div class="rm-envelope-stage">
+          <div class="rm-envelope">
+            <div class="rm-envelope__flap rm-envelope__flap--top"></div>
+            <div class="rm-envelope__pocket"></div>
+            <div class="rm-envelope__seal">
+              <span class="rm-envelope__wax">🌹</span>
+            </div>
+            <div class="rm-envelope__paper-preview"></div>
+          </div>
+          <!-- V11: Mobile tap hint -->
+          <span class="rm-envelope__hint">Zarfa dokun 💌</span>
+        </div>
+
+        <!-- V7: Letter wrapper for perspective -->
+        <div class="rm-scene__content rm-scene__content--letter rm-letter" style="display: none;">
+          <div class="rm-letter-card rm-scene-element" data-delay="300">
+            <!-- Romantic dust particles -->
+            <div class="rm-letter-dust" aria-hidden="true">
+              <span class="rm-letter-dust-particle"></span>
+              <span class="rm-letter-dust-particle"></span>
+              <span class="rm-letter-dust-particle"></span>
+              <span class="rm-letter-dust-particle"></span>
+              <span class="rm-letter-dust-particle"></span>
+              <span class="rm-letter-dust-particle"></span>
+              <span class="rm-letter-dust-particle"></span>
+              <span class="rm-letter-dust-particle"></span>
+            </div>
+            
+            <div class="rm-letter-card__header rm-scene-element" data-delay="500">
+              <span class="rm-letter-card__title">Bugün sana bir şey söylemek istiyorum... 💌</span>
+            </div>
+            
+            <div class="rm-letter-card__body">
+              <p class="rm-scene-element" data-delay="800">
+                Hayatıma girdiğin günden beri günlerimi güzelleştiren yegane şey sensin.
+                Sanki, çocukluğumdan beri aramışım hep seni? 
+              </p>
+              
+              <p class="rm-scene-element" data-delay="1100">
+                O güzel enerjin, bakışların veya gülüşün. 
+                Kısacası her şeyin hoşuma gidiyor, asla sıkılmıyorum. 
+              </p>
+              
+              <p class="rm-scene-element" data-delay="1400">
+                Bazenleri ne kadar özel olduğunu anlamıyorsun sanki, ya da anlatamıyorum. 
+                Kelimeler yetmiyor ki zaten, ama bilmen gerekiyor ki benim için asla sıradan birisi değilsin, olmayacaksın da.
+                Sen benim başıma gelmiş en güzel şeysin. 
+              </p>
+              
+              <p class="rm-scene-element" data-delay="1700">
+                Gözlerine baktığımdaysa sadece seni görmüyorum, birlikte mutlu bir şekilde geçireceğimiz hayatı,
+                bol hayvanişkolu evimizi ve harika bir anniş olacağını görüyorum ben.
+                Hayatımın geri kalanı sana ait ve bundan daha harika bir şey de olamaz.
+              </p>
+              
+              <p class="rm-scene-element" data-delay="2000">
+                Bu yaşından benim tek dileğim, seni her gün daha da fazla mutlu etmek. 
+                Çünkü sen mutlu olduğunda, benim dünyam da güzelleşiyor.
+              </p>
+              
+              <p class="rm-letter-card__closing rm-scene-element" data-delay="2300">
+                İyi ki doğmuşsun, iyi ki varsın ve iyi ki de benimlesin. 
+              </p>
+              
+              <p class="rm-letter-card__signature rm-scene-element" data-delay="2600">
+                Seni çok seviyorum. 💕
+              </p>
+            </div>
+            
+            <div class="rm-letter-card__footer rm-scene-element" data-delay="2900">
+              <span class="rm-letter-card__from">Nice mutlu ve birlikte geçireceğimiz yıllara hatunum. 🙄</span>
+              <span class="rm-letter-card__sign">— Tatlışkon</span>
+            </div>
+          </div>
+
+          <!-- Restart Button -->
+          <div class="rm-scene__nav rm-scene__nav--final">
+            <button class="rm-scene-restart rm-btn rm-btn--restart rm-scene-element" data-delay="3200">
+              Baştan izlemek istiyorum <span class="rm-btn__icon">↺</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /.rm-scene-shell -->
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         MUSIC BUTTON
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <button 
+      class="rm-music-button" 
+      type="button"
+      aria-label="Müziği aç"
+      aria-pressed="false"
+      title="Müziği aç"
+    >
+      <span class="rm-music-button__icon">🎵</span>
+      <span class="rm-music-button__tooltip">Harvey'i aç</span>
+    </button>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         LIGHTBOX
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <div class="rm-lightbox" role="dialog" aria-modal="true" aria-label="Fotoğraf galerisi">
+      <button class="rm-lightbox__close" aria-label="Kapat">×</button>
+      <button class="rm-lightbox__nav rm-lightbox__nav--prev" aria-label="Önceki fotoğraf">‹</button>
+      <button class="rm-lightbox__nav rm-lightbox__nav--next" aria-label="Sonraki fotoğraf">›</button>
+      <div class="rm-lightbox__content">
+        <img class="rm-lightbox__image" src="" alt="Galeri fotoğrafı">
+        <p class="rm-lightbox__caption"></p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         HEARTBURST LAYER
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <div class="rm-heartburst-layer" aria-hidden="true"></div>
+
+  </div><!-- /.rm-shell -->
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS (V7: Cinematic Polish with mini-show timeline)
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <script src="src/js/rm-core.js"></script>
+  <script src="src/js/rm-scenes.js"></script>
+  <script src="src/js/rm-animals-timeline.js"></script>
+  <script src="src/js/rm-reveal.js"></script>
+  <script src="src/js/rm-music.js"></script>
+  <script src="src/js/rm-lightbox.js"></script>
+  <!-- rm-carousel.js removed: replaced by rm-animals-timeline.js -->
+  <script src="src/js/rm-heartburst.js"></script>
+  <script src="src/js/rm-parallax.js"></script>
+  <script src="src/js/rm-eastereggs.js"></script>
+</body>
+</html>
