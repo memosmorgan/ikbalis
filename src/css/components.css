@@ -1953,12 +1953,13 @@
   text-underline-offset: 3px;
 }
 
-/* Mobile tap hint (finger emoji) */
+/* Mobile tap hint (finger emoji) - BELOW the word pointing UP */
 @media (max-width: 767px) {
   .rm-highlight-eyes:not(.is-triggered)::before {
     content: '👆';
     position: absolute;
-    top: -1.5rem;
+    top: auto;
+    bottom: -1.8rem;
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.85rem;
@@ -2020,8 +2021,8 @@
 
 @keyframes rm-tap-hint {
   0%, 100% { opacity: 0; transform: translateX(-50%) translateY(0); }
-  30% { opacity: 0.9; transform: translateX(-50%) translateY(-3px); }
-  60% { opacity: 0.9; transform: translateX(-50%) translateY(3px); }
+  30% { opacity: 0.9; transform: translateX(-50%) translateY(3px); }
+  60% { opacity: 0.9; transform: translateX(-50%) translateY(-3px); }
 }
 
 @keyframes rm-tooltip-pop-mobile {
